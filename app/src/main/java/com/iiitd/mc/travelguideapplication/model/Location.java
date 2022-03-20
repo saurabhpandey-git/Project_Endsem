@@ -1,4 +1,4 @@
-package com.iiitd.mc.travelguideapplication;
+package com.iiitd.mc.travelguideapplication.model;
 
 public class Location {
     private float latitude;
