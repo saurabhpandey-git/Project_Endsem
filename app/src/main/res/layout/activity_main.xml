@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@color/darkest">
+    android:background="@color/dark">
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="112dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -19,20 +19,43 @@
         app:srcCompat="@drawable/appicon" />
 
     <EditText
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textColorHint="@color/lightgray"
+        android:background="@drawable/circle"
+        android:textColor="@color/white"
+        android:paddingLeft="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:hint="Username"
+        android:fontFamily="monospace"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.203"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <EditText
         android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="44dp"
-        android:hint="Email"
         android:textColorHint="@color/lightgray"
         android:background="@drawable/circle"
-        android:inputType="text"
-        android:paddingLeft="10dp"
         android:textColor="@color/white"
-        android:layout_marginRight="40dp"
+        android:layout_marginTop="5dp"
+        android:paddingLeft="20dp"
+        android:hint="Email"
+        android:inputType="text"
+        android:fontFamily="monospace"
         android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.183"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/name"
+        app:layout_constraintVertical_bias="0.173" />
 
     <EditText
         android:id="@+id/password"
@@ -41,82 +64,79 @@
         android:textColorHint="@color/lightgray"
         android:background="@drawable/circle"
         android:textColor="@color/white"
+        android:layout_marginTop="5dp"
+        android:paddingLeft="20dp"
         android:hint="Password"
-        android:paddingLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="40dp"
+        android:fontFamily="monospace"
         android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email" />
+        app:layout_constraintTop_toBottomOf="@+id/email"
+        tools:layout_editor_absoluteY="359dp" />
+
     <TextView
         android:id="@+id/account"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Click to Register Here"
-        android:textColor="@color/white"
+        android:text="Already have a account"
+        android:textColor="@color/lightgray"
         android:layout_marginTop="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/signup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.86"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password"
         app:layout_constraintVertical_bias="0.512" />
+
     <Button
-        android:id="@+id/signin"
+        android:id="@+id/signup"
         android:layout_width="200dp"
-        android:layout_height="wrap_content"
+        android:layout_height="55dp"
         android:layout_marginTop="32dp"
-        android:text="Sign In"
-        android:textAllCaps="false"
+        android:text="Sign Up"
         android:background="@drawable/buttoncorner"
+        android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
+
         app:layout_constraintTop_toBottomOf="@+id/account" />
 
     <ImageButton
         android:id="@+id/google"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="70dp"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="52dp"
         android:layout_marginTop="28dp"
-        android:adjustViewBounds="true"
-        android:background="@android:color/transparent"
-        android:foregroundGravity="center"
-        android:maxWidth="50dp"
-        android:maxHeight="50dp"
-        android:scaleType="fitCenter"
         android:src="@drawable/google"
-        app:layout_constraintEnd_toStartOf="@+id/facebook"
+        android:background="@android:color/transparent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signin" />
+        app:layout_constraintEnd_toStartOf="@+id/facebook"
+        app:layout_constraintTop_toBottomOf="@+id/signup" />
 
     <ImageButton
         android:id="@+id/facebook"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
         android:layout_marginTop="28dp"
-        android:adjustViewBounds="true"
-        android:background="@android:color/transparent"
-        android:foregroundGravity="center"
-        android:maxWidth="50dp"
-        android:maxHeight="50dp"
-        android:layout_marginEnd="70dp"
-        android:scaleType="fitCenter"
+        android:layout_marginEnd="52dp"
         android:src="@drawable/facebook"
+        android:background="@android:color/transparent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.61"
         app:layout_constraintStart_toEndOf="@+id/google"
-        app:layout_constraintHorizontal_bias="0.73"
-        app:layout_constraintTop_toBottomOf="@+id/signin" />
+        app:layout_constraintTop_toBottomOf="@+id/signup" />
 
     <TextView
         android:id="@+id/phone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="220dp"
-        android:textColor="@color/white"
-        android:text="Sign Up with Phone Number"
+        android:layout_marginTop="208dp"
+        android:text="Sign Up with Phone"
+        android:textColor="@color/lightgray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password" />
