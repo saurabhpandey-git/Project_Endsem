@@ -34,9 +34,11 @@ public class AdapterHomeScreen extends RecyclerView.Adapter<AdapterHomeScreen.Vi
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolderHomeScreen holder, int position) {
-        Picasso.get().load(listPlaces.get(position).getImgUrl()).into(holder.placesImg);
+
+//        Picasso.get().load(listPlaces.get(position).getImgUrl()).into(holder.placesImg);
         Places p = listPlaces.get(position);
         holder.placeTitle.setText(p.getPlaceName());
+        Picasso.with(context.getApplicationContext()).load(p.getImgUrl()).into(holder.placesImg);
 
     }
 
