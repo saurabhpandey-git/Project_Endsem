@@ -4,10 +4,13 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -31,7 +34,7 @@ public class AdapterHomeScreen extends RecyclerView.Adapter<AdapterHomeScreen.Vi
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolderHomeScreen holder, int position) {
-
+        Picasso.get().load(listPlaces.get(position).getImgUrl()).into(holder.placesImg);
         Places p = listPlaces.get(position);
         holder.placeTitle.setText(p.getPlaceName());
 
@@ -45,6 +48,7 @@ public class AdapterHomeScreen extends RecyclerView.Adapter<AdapterHomeScreen.Vi
     public static class ViewHolderHomeScreen extends RecyclerView.ViewHolder{
 
         TextView placeTitle;
+        ImageView placesImg;
 
 
 
@@ -52,6 +56,7 @@ public class AdapterHomeScreen extends RecyclerView.Adapter<AdapterHomeScreen.Vi
             super(itemView);
 
             placeTitle = itemView.findViewById(R.id.placeTitle);
+            placesImg = itemView.findViewById(R.id.placesImage);
 
         }
     }
