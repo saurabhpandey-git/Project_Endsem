@@ -10,7 +10,10 @@
         <entry key="app/src/main/res/drawable/corner.xml" value="0.233" />
         <entry key="app/src/main/res/drawable/imagecorner.xml" value="0.233" />
         <entry key="app/src/main/res/drawable/listcorner.xml" value="0.233" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.13675842285156248" />
+        <entry key="app/src/main/res/drawable/profilecorner.xml" value="0.2505" />
+        <entry key="app/src/main/res/drawable/profileui.xml" value="0.2505" />
+        <entry key="app/src/main/res/drawable/tripcorner.xml" value="0.2505" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_home_screen.xml" value="0.25" />
         <entry key="app/src/main/res/layout/list.xml" value="0.2953125" />
       </map>
