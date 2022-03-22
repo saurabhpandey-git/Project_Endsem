@@ -3,14 +3,19 @@ package com.iiitd.mc.travelguideapplication;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -26,7 +31,7 @@ public class HomeScreenFragment extends Fragment {
     DatabaseReference db;
     AdapterHomeScreen ahs;
     ArrayList<Places> listPlaces;
-    Button userLogin;
+    ImageButton userLogin;
 
     public HomeScreenFragment() {
         // Required empty public constructor
@@ -52,6 +57,17 @@ public class HomeScreenFragment extends Fragment {
         listPlaces = new ArrayList<>();
         ahs = new AdapterHomeScreen(getContext(), listPlaces);
         rv.setAdapter(ahs);
+
+        userLogin = (ImageButton) v.findViewById(R.id.userLogin);
+
+        userLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AppCompatActivity act = (AppCompatActivity) v.getContext();
+                Fragment loginFragment = new LoginFragment();
+                act.getSupportFragmentManager().beginTransaction().replace(R.id.fragmentHomeScreen,loginFragment).addToBackStack(null).commit();
+            }
+        });
 
 
         db.addValueEventListener(new ValueEventListener() {
