@@ -38,7 +38,8 @@ public class AdapterHomeScreen extends RecyclerView.Adapter<AdapterHomeScreen.Vi
 //        Picasso.get().load(listPlaces.get(position).getImgUrl()).into(holder.placesImg);
         Places p = listPlaces.get(position);
         holder.placeTitle.setText(p.getPlaceName());
-        Picasso.with(context.getApplicationContext()).load(p.getImgUrl()).into(holder.placesImg);
+        holder.placeUrl.setText(p.getImgUrl());
+        //Picasso.with(context.getApplicationContext()).load(p.getImgUrl()).into(holder.placeUrl);
 
     }
 
@@ -50,7 +51,8 @@ public class AdapterHomeScreen extends RecyclerView.Adapter<AdapterHomeScreen.Vi
     public static class ViewHolderHomeScreen extends RecyclerView.ViewHolder{
 
         TextView placeTitle;
-        ImageView placesImg;
+        TextView placeUrl;
+       // ImageView placesImg;
 
 
 
@@ -58,7 +60,7 @@ public class AdapterHomeScreen extends RecyclerView.Adapter<AdapterHomeScreen.Vi
             super(itemView);
 
             placeTitle = itemView.findViewById(R.id.placeTitle);
-            placesImg = itemView.findViewById(R.id.placesImage);
+            placeUrl = itemView.findViewById(R.id.placeUrl);
 
         }
     }

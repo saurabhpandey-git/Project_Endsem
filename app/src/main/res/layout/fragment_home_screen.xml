@@ -90,12 +90,6 @@
             android:layout_marginLeft="5dp"
             android:textColor="@color/white"/>
 
-<!--        <ImageView-->
-<!--            android:id="@+id/img"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            tools:srcCompat="@tools:sample/avatars" />-->
-
 
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"

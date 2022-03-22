@@ -32,6 +32,7 @@ public class HomeScreenFragment extends Fragment {
     AdapterHomeScreen ahs;
     ArrayList<Places> listPlaces;
     ImageButton userLogin;
+    
 
     public HomeScreenFragment() {
         // Required empty public constructor
