@@ -12,8 +12,10 @@
         <entry key="app/src/main/res/drawable/listcorner.xml" value="0.233" />
         <entry key="app/src/main/res/drawable/profilecorner.xml" value="0.2505" />
         <entry key="app/src/main/res/drawable/profileui.xml" value="0.2505" />
+        <entry key="app/src/main/res/drawable/semitransparent.xml" value="0.2295" />
         <entry key="app/src/main/res/drawable/tripcorner.xml" value="0.2505" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_expenses.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_home_screen.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_login.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.22" />
