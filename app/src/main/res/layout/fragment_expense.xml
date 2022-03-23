@@ -61,7 +61,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="250dp"
                     android:orientation="vertical"
-                    android:background="@drawable/corner">
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/expcorner">
 
 
 
@@ -153,6 +154,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:orientation="vertical"
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/bluecorner">
 
 
