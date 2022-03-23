@@ -5,9 +5,11 @@
       <map>
         <entry key="app/src/main/res/drawable-v24/circle.xml" value="0.1825" />
         <entry key="app/src/main/res/drawable-v24/corner.xml" value="0.1825" />
+        <entry key="app/src/main/res/drawable/bluecorner.xml" value="0.2295" />
         <entry key="app/src/main/res/drawable/buttoncorner.xml" value="0.1825" />
         <entry key="app/src/main/res/drawable/circle.xml" value="0.233" />
         <entry key="app/src/main/res/drawable/corner.xml" value="0.233" />
+        <entry key="app/src/main/res/drawable/expenseshape.xml" value="0.2295" />
         <entry key="app/src/main/res/drawable/imagecorner.xml" value="0.233" />
         <entry key="app/src/main/res/drawable/listcorner.xml" value="0.233" />
         <entry key="app/src/main/res/drawable/profilecorner.xml" value="0.2505" />
@@ -15,6 +17,7 @@
         <entry key="app/src/main/res/drawable/semitransparent.xml" value="0.2295" />
         <entry key="app/src/main/res/drawable/tripcorner.xml" value="0.2505" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_expense.xml" value="0.13675842285156248" />
         <entry key="app/src/main/res/layout/fragment_expenses.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_home_screen.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_login.xml" value="0.25" />
