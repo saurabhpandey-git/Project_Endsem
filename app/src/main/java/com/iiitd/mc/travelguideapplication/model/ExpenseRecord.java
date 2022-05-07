@@ -1,24 +1,27 @@
 package com.iiitd.mc.travelguideapplication.model;
 
 public class ExpenseRecord {
-    private User user;
+    private int userID;
     private String purpose;
     private String comment;
     private float amount;
 
-    public ExpenseRecord(User user, String purpose, String comment, float amount) {
-        this.user = user;
+    public ExpenseRecord() {
+    }
+
+    public ExpenseRecord(int userID, String purpose, String comment, float amount) {
+        this.userID = userID;
         this.purpose = purpose;
         this.comment = comment;
         this.amount = amount;
     }
 
-    public User getUser() {
-        return user;
+    public int getUser() {
+        return userID;
     }
 
     public void setUser(User user) {
-        this.user = user;
+        this.userID = userID;
     }
 
     public String getPurpose() {

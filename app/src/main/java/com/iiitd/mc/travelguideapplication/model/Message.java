@@ -4,12 +4,12 @@ import java.time.LocalDateTime;
 
 public class Message {
     private String message;
-    private User user;
-    private LocalDateTime timeStamp;
+    private int userID;
+    private String timeStamp;
 
-    public Message(String message, User user, LocalDateTime timeStamp) {
+    public Message(String message, int userID, String timeStamp) {
         this.message = message;
-        this.user = user;
+        this.userID = userID;
         this.timeStamp = timeStamp;
     }
 
@@ -21,19 +21,19 @@ public class Message {
         this.message = message;
     }
 
-    public User getUser() {
-        return user;
+    public int getUser() {
+        return userID;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUser(String user) {
+        this.userID = userID;
     }
 
-    public LocalDateTime getTimeStamp() {
+    public String getTimeStamp() {
         return timeStamp;
     }
 
-    public void setTimeStamp(LocalDateTime timeStamp) {
+    public void setTimeStamp(String timeStamp) {
         this.timeStamp = timeStamp;
     }
 }

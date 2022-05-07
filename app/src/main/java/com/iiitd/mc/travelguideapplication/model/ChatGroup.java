@@ -3,20 +3,20 @@ package com.iiitd.mc.travelguideapplication.model;
 import java.util.List;
 
 public class ChatGroup {
-    private List<User> coTravellers;
+    private List<Integer> coTravellersUserIDs;
     private List<Message> chatHistory;
 
-    public ChatGroup(List<User> coTravellers, List<Message> chatHistory) {
-        this.coTravellers = coTravellers;
+    public ChatGroup(List<Integer> coTravellersUserIDs, List<Message> chatHistory) {
+        this.coTravellersUserIDs = coTravellersUserIDs;
         this.chatHistory = chatHistory;
     }
 
-    public List<User> getCoTravellers() {
-        return coTravellers;
+    public List<Integer> getCoTravellers() {
+        return coTravellersUserIDs;
     }
 
-    public void setCoTravellers(List<User> coTravellers) {
-        this.coTravellers = coTravellers;
+    public void setCoTravellers(List<Integer> coTravellersUserIDs) {
+        this.coTravellersUserIDs = coTravellersUserIDs;
     }
 
     public List<Message> getChatHistory() {

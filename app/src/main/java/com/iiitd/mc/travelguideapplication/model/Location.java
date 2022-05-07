@@ -6,10 +6,18 @@ public class Location {
     private float altitude;
     private String name;
 
+    public Location() {
+    }
+
     public Location(float latitude, float longitude, float altitude, String name) {
         this.latitude = latitude;
         this.longitude = longitude;
         this.altitude = altitude;
+        this.name = name;
+    }
+    public Location(float latitude, float longitude, String name) {
+        this.latitude = latitude;
+        this.longitude = longitude;
         this.name = name;
     }
 

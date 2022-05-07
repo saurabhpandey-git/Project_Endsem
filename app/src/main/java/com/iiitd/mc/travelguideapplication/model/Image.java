@@ -6,15 +6,15 @@ import java.time.LocalDateTime;
 
 public class Image {
     private String name;
-    private Bitmap image;
-    private User addedBy;
-    private LocalDateTime timeStamp;
+    private String image;
+    private int addedByUserID;
+    private String timeStamp;
     private Location location;
 
-    public Image(String name, Bitmap image, User addedBy, LocalDateTime timeStamp, Location location) {
+    public Image(String name, String image, int addedByUserID, String timeStamp, Location location) {
         this.name = name;
         this.image = image;
-        this.addedBy = addedBy;
+        this.addedByUserID = addedByUserID;
         this.timeStamp = timeStamp;
         this.location = location;
     }
@@ -27,27 +27,27 @@ public class Image {
         this.name = name;
     }
 
-    public Bitmap getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(Bitmap image) {
+    public void setImage(String image) {
         this.image = image;
     }
 
-    public User getAddedBy() {
-        return addedBy;
+    public int getAddedBy() {
+        return addedByUserID;
     }
 
-    public void setAddedBy(User addedBy) {
-        this.addedBy = addedBy;
+    public void setAddedBy(int addedBy) {
+        this.addedByUserID = addedBy;
     }
 
-    public LocalDateTime getTimeStamp() {
+    public String getTimeStamp() {
         return timeStamp;
     }
 
-    public void setTimeStamp(LocalDateTime timeStamp) {
+    public void setTimeStamp(String timeStamp) {
         this.timeStamp = timeStamp;
     }
 

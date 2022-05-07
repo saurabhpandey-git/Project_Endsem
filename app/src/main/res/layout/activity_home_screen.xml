@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:background="@color/light">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/dark">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/corner"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/userLogin"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="Login Button"
+                    android:padding="5dp"
+                    app:srcCompat="@drawable/icons8_user_24" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/Welcome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Welcome"
+                android:textColor="@color/darkgray"
+                android:textSize="35dp"
+                android:paddingLeft="20dp"
+                android:layout_marginTop="10dp"
+                />
+
+
+            <TextView
+                android:id="@+id/tagLine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Search your Dream Location"
+                android:textColor="@color/lightgray"
+                android:layout_marginBottom="20dp"
+                android:paddingLeft="20dp"/>
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/searchEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Search"
+            android:layout_margin="15dp"
+            android:paddingLeft="15dp"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:textSize="25dp"
+            android:background="@drawable/circle"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:backgroundTint="@color/white"
+            />
+
+        <TextView
+            android:id="@+id/states"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Some places worth visiting..."
+            android:textSize="18dp"
+            android:fontFamily="monospace"
+            android:padding="10dp"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/white"/>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="horizontal"
+            android:id="@+id/recyclerViewList">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

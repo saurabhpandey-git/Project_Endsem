@@ -4,16 +4,30 @@ import java.util.List;
 
 public class Trip {
     private String name;
-    private String id;
+    private static int idGenerator;
+    private int id;
     private String startDate;
     private ChatGroup chat;
     private Expenses expenses;
     private List<Image> images;
     private List<Place> route;
 
-    public Trip(String name, String id) {
+    public Trip() {
+    }
+
+    public Trip(String name) {
         this.name = name;
-        this.id = id;
+        this.id = idGenerator++;
+    }
+
+    public Trip(String name, String startDate, ChatGroup chat, Expenses expenses, List<Image> images, List<Place> route) {
+        this.name = name;
+        this.id = idGenerator++;
+        this.startDate = startDate;
+        this.chat = chat;
+        this.expenses = expenses;
+        this.images = images;
+        this.route = route;
     }
 
     public String getName() {
@@ -24,11 +38,11 @@ public class Trip {
         this.name = name;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -71,4 +85,6 @@ public class Trip {
     public void setRoute(List<Place> route) {
         this.route = route;
     }
+
+
 }

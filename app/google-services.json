@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "737232798964",
+    "firebase_url": "https://travelguideapplication-1d054-default-rtdb.firebaseio.com",
+    "project_id": "travelguideapplication-1d054",
+    "storage_bucket": "travelguideapplication-1d054.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:737232798964:android:69d1714fb29a393f484aa1",
+        "android_client_info": {
+          "package_name": "com.iiitd.mc.travelguideapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "737232798964-0l9dkfmt84h2amtkpj86ctee1kvapmqp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWqjeho01BCYRu77UsbQYVKGhK0FJmnqw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "737232798964-0l9dkfmt84h2amtkpj86ctee1kvapmqp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

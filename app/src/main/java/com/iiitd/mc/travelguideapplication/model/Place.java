@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Place {
     private Location location;
-    private LocalDateTime durationOfStay;
+    private String durationOfStay;
     private List<String> itemsToPackRecommendationBasedOnLocationAndTime;
     private String city;
     private String state;
@@ -26,11 +26,11 @@ public class Place {
         this.location = location;
     }
 
-    public LocalDateTime getDurationOfStay() {
+    public String getDurationOfStay() {
         return durationOfStay;
     }
 
-    public void setDurationOfStay(LocalDateTime durationOfStay) {
+    public void setDurationOfStay(String durationOfStay) {
         this.durationOfStay = durationOfStay;
     }
 

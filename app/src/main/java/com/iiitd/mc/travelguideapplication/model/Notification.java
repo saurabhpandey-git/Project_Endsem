@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 
 public class Notification {
     private String text;
-    private LocalDateTime timeStamp;
+    private String timeStamp;
 
     public Notification(String text) {
         this.text = text;
@@ -18,11 +18,11 @@ public class Notification {
         this.text = text;
     }
 
-    public LocalDateTime getTimeStamp() {
+    public String getTimeStamp() {
         return timeStamp;
     }
 
-    public void setTimeStamp(LocalDateTime timeStamp) {
+    public void setTimeStamp(String timeStamp) {
         this.timeStamp = timeStamp;
     }
 }

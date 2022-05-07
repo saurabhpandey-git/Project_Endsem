@@ -1,26 +1,58 @@
 package com.iiitd.mc.travelguideapplication.model;
 
-import android.graphics.Bitmap;
-
 import java.util.List;
 
 public class User {
+    private static int idGenerator = 0;
+    private int id;
     private String name;
     private int age;
     private String mobileNumber;
     private String email;
-    private Bitmap profileImage;
+    private String profileImage;
     private Location lastSavedLocation;
     private Trip currentTripPlan;
     private List<Trip> travelHistory;
     private List<Notification> notifications;
+
+    public User() {
+        this.id = idGenerator++;
+    }
 
     public User(String name, int age, String mobileNumber, String email) {
         this.name = name;
         this.age = age;
         this.mobileNumber = mobileNumber;
         this.email = email;
+        this.id = idGenerator++;
     }
+
+    public User(String name, int age, String mobileNumber, String email, String profileImage, Location lastSavedLocation, Trip currentTripPlan, List<Trip> travelHistory, List<Notification> notifications) {
+        this.id = idGenerator++;
+        this.name = name;
+        this.age = age;
+        this.mobileNumber = mobileNumber;
+        this.email = email;
+        this.profileImage = profileImage;
+        this.lastSavedLocation = lastSavedLocation;
+        this.currentTripPlan = currentTripPlan;
+        this.travelHistory = travelHistory;
+        this.notifications = notifications;
+    }
+
+//    public boolean addExpense(ExpenseRecord record){
+//
+//    }
+
+
+
+
+
+
+
+
+
+
 
     public String getName() {
         return name;
@@ -54,11 +86,11 @@ public class User {
         this.email = email;
     }
 
-    public Bitmap getProfileImage() {
+    public String getProfileImage() {
         return profileImage;
     }
 
-    public void setProfileImage(Bitmap profileImage) {
+    public void setProfileImage(String profileImage) {
         this.profileImage = profileImage;
     }
 
@@ -92,5 +124,13 @@ public class User {
 
     public void setNotifications(List<Notification> notifications) {
         this.notifications = notifications;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
