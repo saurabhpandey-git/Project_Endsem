@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -14,16 +15,15 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.iiitd.mc.travelguideapplication.model.Place;
 import com.iiitd.mc.travelguideapplication.model.Places;
 
 import java.util.ArrayList;
 
-public class HomeScreen extends AppCompatActivity {
+public class HomeScreenActivity extends AppCompatActivity {
 
     private RecyclerView rv;
     private DatabaseReference db;
-    private AdapterHomeScreen ahs;
+    private HomeScreenAdapter ahs;
     private ArrayList<Places> listPlaces;
     private ImageButton userLogin;
 
@@ -38,7 +38,7 @@ public class HomeScreen extends AppCompatActivity {
         rv.setLayoutManager(new LinearLayoutManager(this));
 
         listPlaces = new ArrayList<>();
-        ahs = new AdapterHomeScreen(this, listPlaces);
+        ahs = new HomeScreenAdapter(this, listPlaces);
         rv.setAdapter(ahs);
 
         userLogin = findViewById(R.id.userLogin);
@@ -59,6 +59,20 @@ public class HomeScreen extends AppCompatActivity {
 
             }
         });
+
+
+        userLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeScreenActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+
+
     }
 
 

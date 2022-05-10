@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PlanTripActivity"
+    android:orientation="vertical"
+    android:background="@color/dark">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/locationarea"
+        android:layout_margin="20dp">
+
+        <ImageButton
+            android:id="@+id/but_userLocation"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/formbutton"
+            android:backgroundTint="@color/blue">
+
+        </ImageButton>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="20dp">
+            <TextView
+                android:id="@+id/tv_userLocationLine1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="Address line 1"
+                android:textColor="@color/darkest"/>
+
+            <TextView
+                android:id="@+id/tv_userLocationLine2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="Address line 2"
+                android:textColor="@color/darkest"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/formfieldbg"
+        android:layout_margin="20dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Trip Name : "
+            android:layout_weight="1"
+            android:textSize="24sp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:textColor="@color/material_dynamic_tertiary95"
+            android:layout_margin="15dp"
+            android:padding="5dp"/>
+        <EditText
+            android:id="@+id/et_tripName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="College Trip"
+            android:textSize="22sp"
+            android:textColorHint="@color/lightgray"
+            android:textColor="@color/material_dynamic_tertiary95"
+            android:fontFamily="sans-serif-smallcaps"
+            android:layout_margin="15dp"
+            android:padding="5dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/formfieldbg"
+        android:layout_margin="20dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Trip Name : "
+            android:layout_weight="1"
+            android:textSize="24sp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:textColor="@color/material_dynamic_tertiary95"
+            android:layout_margin="15dp"
+            android:padding="5dp"/>
+        <EditText
+            android:id="@+id/et_ColleageEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="College Trip"
+            android:textSize="22sp"
+            android:textColorHint="@color/lightgray"
+            android:textColor="@color/material_dynamic_tertiary95"
+            android:fontFamily="sans-serif-smallcaps"
+            android:layout_margin="15dp"
+            android:padding="5dp"/>
+    </LinearLayout>
+
+</LinearLayout>

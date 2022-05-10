@@ -3,7 +3,6 @@ package com.iiitd.mc.travelguideapplication;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,24 +12,21 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.RecyclerView.ViewHolder;
 
 import com.iiitd.mc.travelguideapplication.model.Places;
-import com.squareup.picasso.Picasso;
 
 import java.io.InputStream;
 import java.net.HttpURLConnection;
-import java.net.URI;
 import java.net.URL;
 import java.util.ArrayList;
 
-public class AdapterHomeScreen extends RecyclerView.Adapter<AdapterHomeScreen.ViewHolderHomeScreen> {
+public class HomeScreenAdapter extends RecyclerView.Adapter<HomeScreenAdapter.ViewHolderHomeScreen> {
 
 
     Context context;
     ArrayList<Places> listPlaces;
 
-    public AdapterHomeScreen(Context context, ArrayList<Places> list) {
+    public HomeScreenAdapter(Context context, ArrayList<Places> list) {
         this.context = context;
         this.listPlaces = list;
     }
@@ -50,6 +46,11 @@ public class AdapterHomeScreen extends RecyclerView.Adapter<AdapterHomeScreen.Vi
         holder.placeTitle.setText(p.getPlaceName());
 
         new ImageLoadTask(p.getURL(), holder.placesImg).execute();
+
+
+
+
+
 //        Picasso.with(context).load(p.getURL()).into(holder.placesImg);
 //        holder.placesImg.setImageURI(Uri.parse(p.getImgUrl()));
 //        Picasso.with(context.getApplicationContext()).load(p.getURL()).into(holder.placesImg);

@@ -4,9 +4,21 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/SAADHVII/AndroidStudioProjects/TravelGuideApplication/app/src/main/res/drawable/bluecorner.xml" value="0.1095" />
+        <entry key="..\:/Users/SAADHVII/AndroidStudioProjects/TravelGuideApplication/app/src/main/res/drawable/buttoncorner.xml" value="0.1295" />
+        <entry key="..\:/Users/SAADHVII/AndroidStudioProjects/TravelGuideApplication/app/src/main/res/drawable/circle.xml" value="0.1295" />
         <entry key="..\:/Users/SAADHVII/AndroidStudioProjects/TravelGuideApplication/app/src/main/res/drawable/corner.xml" value="0.16" />
+        <entry key="..\:/Users/SAADHVII/AndroidStudioProjects/TravelGuideApplication/app/src/main/res/drawable/expcorner.xml" value="0.1295" />
+        <entry key="..\:/Users/SAADHVII/AndroidStudioProjects/TravelGuideApplication/app/src/main/res/drawable/formbutton.xml" value="0.1295" />
+        <entry key="..\:/Users/SAADHVII/AndroidStudioProjects/TravelGuideApplication/app/src/main/res/drawable/formfieldbg.xml" value="0.1295" />
+        <entry key="..\:/Users/SAADHVII/AndroidStudioProjects/TravelGuideApplication/app/src/main/res/drawable/locationarea.xml" value="0.1295" />
+        <entry key="..\:/Users/SAADHVII/AndroidStudioProjects/TravelGuideApplication/app/src/main/res/layout/activity_expense.xml" value="0.23282051282051283" />
+        <entry key="..\:/Users/SAADHVII/AndroidStudioProjects/TravelGuideApplication/app/src/main/res/layout/activity_history.xml" value="0.23282051282051283" />
         <entry key="..\:/Users/SAADHVII/AndroidStudioProjects/TravelGuideApplication/app/src/main/res/layout/activity_home_screen.xml" value="0.23645833333333333" />
+        <entry key="..\:/Users/SAADHVII/AndroidStudioProjects/TravelGuideApplication/app/src/main/res/layout/activity_login.xml" value="0.22239583333333332" />
         <entry key="..\:/Users/SAADHVII/AndroidStudioProjects/TravelGuideApplication/app/src/main/res/layout/activity_main.xml" value="0.23645833333333333" />
+        <entry key="..\:/Users/SAADHVII/AndroidStudioProjects/TravelGuideApplication/app/src/main/res/layout/activity_plan_trip.xml" value="0.2" />
+        <entry key="..\:/Users/SAADHVII/AndroidStudioProjects/TravelGuideApplication/app/src/main/res/layout/activity_register.xml" value="0.23645833333333333" />
+        <entry key="..\:/Users/SAADHVII/AndroidStudioProjects/TravelGuideApplication/app/src/main/res/layout/activity_user_profile.xml" value="0.23645833333333333" />
         <entry key="..\:/Users/SAADHVII/AndroidStudioProjects/TravelGuideApplication/app/src/main/res/layout/fragment_expenses.xml" value="0.23645833333333333" />
         <entry key="..\:/Users/SAADHVII/AndroidStudioProjects/TravelGuideApplication/app/src/main/res/layout/fragment_expenses_list.xml" value="0.23645833333333333" />
         <entry key="..\:/Users/SAADHVII/AndroidStudioProjects/TravelGuideApplication/app/src/main/res/layout/list.xml" value="0.1" />
