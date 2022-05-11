@@ -44,7 +44,7 @@ public class ChatActivity extends AppCompatActivity {
                 dbase=dbase.push();
                 dbase.child("Message").setValue("Hi");
                 dbase.child("Sender").setValue("Jack");
-//                dbase=FirebaseDatabase.getInstance().getReference().child("Srijan").child("Chats").child(getIntent().getExtras().get("ChatRoom").toString());
+//              dbase=FirebaseDatabase.getInstance().getReference().child("Srijan").child("Chats").child(getIntent().getExtras().get("ChatRoom").toString());
                 dbase=dbase.push();
                 dbase.child("Message").setValue("Hello");
                 dbase.child("Sender").setValue("Pooja");

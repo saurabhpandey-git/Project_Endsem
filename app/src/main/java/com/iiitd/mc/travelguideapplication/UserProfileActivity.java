@@ -62,8 +62,32 @@ public class UserProfileActivity extends AppCompatActivity {
         storageReference= FirebaseStorage.getInstance().getReference();
         but_currentTrip = findViewById(R.id.but_currentTrip);
         String userID = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        reference = FirebaseDatabase.getInstance().getReference().child("Users").child(userID).child("currentTripPlan");
-        System.out.println("++++++++++++++++++++++reference = "+reference);
+        reference = FirebaseDatabase.getInstance().getReference().child("Users").child(userID);
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                boolean currentTripExists = false;
+                for(DataSnapshot ds:snapshot.getChildren()){
+                    System.out.println("++++++++++++++++++++++data snapshot = "+ds);
+                    System.out.println("++++++++++++++++++++++currnt trip plan = "+ds.getKey().toString());
+                    if(ds.getKey().toString().equalsIgnoreCase("currentTripPlan")) {
+                        currentTripExists = true;
+                    }
+                }
+                if(currentTripExists){
+                    but_currentTrip.setText("Active Trip");
+                }
+                else{
+                    but_currentTrip.setText("Plan a trip");
+                }
+
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
         if(reference!=null) {
             but_currentTrip.setText("Active Trip");
         }else{
