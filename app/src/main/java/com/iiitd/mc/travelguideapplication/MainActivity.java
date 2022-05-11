@@ -59,10 +59,10 @@ public class MainActivity extends AppCompatActivity {
         cotravellers.add(user4);
 
         List<ExpenseRecord> expenses  = new ArrayList<ExpenseRecord>();
-        expenses.add(new ExpenseRecord(user1.getId(), "Hotel", "In Ram Vilas", 12000.0F));
-        expenses.add(new ExpenseRecord(user1.getId(), "Food", "At City Plaza", 3287.0F));
-        expenses.add(new ExpenseRecord(user2.getId(), "Cab", "From Delhi to Panvel", 15000.0F));
-        expenses.add(new ExpenseRecord(user3.getId(), "Cab", "Visit of day1", 12000.0F));
+        expenses.add(new ExpenseRecord("Hotel", "In Ram Vilas", 12000.0F, user1.getId()));
+        expenses.add(new ExpenseRecord("Food", "At City Plaza", 3287.0F, user1.getId()));
+        expenses.add(new ExpenseRecord("Cab", "From Delhi to Panvel", 15000.0F, user2.getId()));
+        expenses.add(new ExpenseRecord("Cab", "Visit of day1", 12000.0F, user3.getId()));
 
         Trip currentTrip = new Trip("Lonavala Trip", "14072022", null, new Expenses(expenses), null, null);
 

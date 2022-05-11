@@ -3,7 +3,7 @@
     package="com.iiitd.mc.travelguideapplication">
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
@@ -16,10 +16,13 @@
         android:theme="@style/Theme.TravelGuideApplication"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".PlanTripActivity"
+            android:name=".AddExpenseActivity"
             android:exported="false" />
         <activity
-            android:name=".ExpenseActivity"
+            android:name=".ShowExpenseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PlanTripActivity"
             android:exported="false" />
         <activity
             android:name=".HistoryActivity"

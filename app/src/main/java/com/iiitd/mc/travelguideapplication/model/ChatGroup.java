@@ -6,6 +6,9 @@ public class ChatGroup {
     private List<Integer> coTravellersUserIDs;
     private List<Message> chatHistory;
 
+    public ChatGroup() {
+    }
+
     public ChatGroup(List<Integer> coTravellersUserIDs, List<Message> chatHistory) {
         this.coTravellersUserIDs = coTravellersUserIDs;
         this.chatHistory = chatHistory;

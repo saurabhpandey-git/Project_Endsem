@@ -4,11 +4,10 @@ import java.util.List;
 
 public class Trip {
     private String name;
-    private static int idGenerator;
-    private int id;
     private String startDate;
     private ChatGroup chat;
     private Expenses expenses;
+    private List<Integer> coTravellers;
     private List<Image> images;
     private List<Place> route;
 
@@ -17,12 +16,10 @@ public class Trip {
 
     public Trip(String name) {
         this.name = name;
-        this.id = idGenerator++;
     }
 
     public Trip(String name, String startDate, ChatGroup chat, Expenses expenses, List<Image> images, List<Place> route) {
         this.name = name;
-        this.id = idGenerator++;
         this.startDate = startDate;
         this.chat = chat;
         this.expenses = expenses;
@@ -36,14 +33,6 @@ public class Trip {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getStartDate() {

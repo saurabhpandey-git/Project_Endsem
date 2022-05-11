@@ -18,8 +18,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.firestore.auth.User;
-import com.iiitd.mc.travelguideapplication.model.ChutiyaUser;
+import com.iiitd.mc.travelguideapplication.model.AppUser;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -118,7 +117,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            ChutiyaUser user = new ChutiyaUser(name,age, email);
+                            AppUser user = new AppUser(name,age, email);
 
                             FirebaseDatabase.getInstance().getReference("Users")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())

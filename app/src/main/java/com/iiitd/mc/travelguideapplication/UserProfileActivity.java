@@ -27,8 +27,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-import com.iiitd.mc.travelguideapplication.model.ChutiyaUser;
-import com.iiitd.mc.travelguideapplication.model.User;
+import com.iiitd.mc.travelguideapplication.model.AppUser;
 import com.squareup.picasso.Picasso;
 
 public class UserProfileActivity extends AppCompatActivity {
@@ -66,7 +65,9 @@ public class UserProfileActivity extends AppCompatActivity {
         but_currentTrip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(UserProfileActivity.this, PlanTripActivity.class));
+                Intent intent = new Intent(UserProfileActivity.this, PlanTripActivity.class);
+                intent.putExtra("CurrentUserID", userId);
+                startActivity(intent);
             }
         });
 
@@ -85,7 +86,7 @@ public class UserProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(UserProfileActivity.this, MainActivity.class));
+                startActivity(new Intent(UserProfileActivity.this, HomeScreenActivity.class));
             }
         });
 
@@ -93,6 +94,7 @@ public class UserProfileActivity extends AppCompatActivity {
         user= FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users");
         userId = user.getUid();
+
 
 
         //fetch image.
@@ -111,11 +113,12 @@ public class UserProfileActivity extends AppCompatActivity {
         reference.child(userId).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                ChutiyaUser userProfile = snapshot.getValue(ChutiyaUser.class);
-
+                AppUser userProfile = snapshot.getValue(AppUser.class);
+                System.out.println("Snapshot = "+ snapshot);
+                System.out.println("User Name = "+userProfile.getName()+" , user age = "+userProfile.getAge());
                 if(userProfile!=null){
-                    String fullname = userProfile.name;
-                    String age = userProfile.age;
+                    String fullname = userProfile.getName();
+                    String age = userProfile.getAge();
 
                     nameTextView.setText(fullname);
                     ageTextView.setText(age);
@@ -163,7 +166,9 @@ public class UserProfileActivity extends AppCompatActivity {
         expensesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(UserProfileActivity.this, ExpenseActivity.class));
+                Intent intent = new Intent(UserProfileActivity.this, ShowExpenseActivity.class);
+
+                startActivity(intent);
             }
         });
 

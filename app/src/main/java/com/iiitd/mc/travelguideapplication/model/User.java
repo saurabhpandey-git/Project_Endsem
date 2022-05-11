@@ -3,8 +3,7 @@ package com.iiitd.mc.travelguideapplication.model;
 import java.util.List;
 
 public class User {
-    private static int idGenerator = 0;
-    private int id;
+    private String id;
     private String name;
     private int age;
     private String mobileNumber;
@@ -16,7 +15,13 @@ public class User {
     private List<Notification> notifications;
 
     public User() {
-        this.id = idGenerator++;
+
+    }
+
+    public User(String name, int age, String email) {
+        this.name = name;
+        this.age = age;
+        this.email = email;
     }
 
     public User(String name, int age, String mobileNumber, String email) {
@@ -24,11 +29,9 @@ public class User {
         this.age = age;
         this.mobileNumber = mobileNumber;
         this.email = email;
-        this.id = idGenerator++;
     }
 
     public User(String name, int age, String mobileNumber, String email, String profileImage, Location lastSavedLocation, Trip currentTripPlan, List<Trip> travelHistory, List<Notification> notifications) {
-        this.id = idGenerator++;
         this.name = name;
         this.age = age;
         this.mobileNumber = mobileNumber;
@@ -45,14 +48,13 @@ public class User {
 //    }
 
 
+    public String getId() {
+        return id;
+    }
 
-
-
-
-
-
-
-
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -124,13 +126,5 @@ public class User {
 
     public void setNotifications(List<Notification> notifications) {
         this.notifications = notifications;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 }

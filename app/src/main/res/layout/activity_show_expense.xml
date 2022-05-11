@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/Welcome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Expenses"
+                android:textStyle="italic|bold"
+                android:textColor="@color/black"
+                android:textSize="35dp"
+                android:paddingLeft="20dp"
+                android:layout_marginTop="60dp"
+                />
+
+
+            <TextView
+                android:id="@+id/tagLine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Days of discovery"
+                android:textColor="@color/black"
+                android:paddingLeft="20dp"/>
+
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="scroll view">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <!--                <ScrollView-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="250dp">-->
+
+                <!--                    <LinearLayout-->
+                <!--                        android:layout_width="match_parent"-->
+                <!--                        android:layout_height="match_parent"-->
+                <!--                        android:layout_marginTop="5dp"-->
+                <!--                        android:orientation="vertical">-->
+
+
+                <LinearLayout
+                    android:scrollbars="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical" >
+
+                    <ListView
+                        android:id="@+id/expenseitems"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+
+                <!--                    </LinearLayout>-->
+                <!--                </ScrollView>-->
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:orientation="vertical"
+                    android:layout_marginTop="5dp">
+
+
+                    <TextView
+                        android:id="@+id/tv_totalExpense"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="3,680Rs"
+                        android:textStyle="italic|bold"
+                        android:textColor="@color/black"
+                        android:textSize="35dp"
+                        android:fontFamily="monospace"
+                        android:paddingLeft="20dp"
+                        android:layout_marginTop="60dp"
+                        />
+
+
+                    <TextView
+                        android:id="@+id/totalExp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Total Expense"
+                        android:textColor="@color/black"
+                        android:fontFamily="monospace"
+                        android:paddingLeft="20dp"/>
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/but_addExpense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="40dp"
+                    android:text="Add expense" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</LinearLayout>
