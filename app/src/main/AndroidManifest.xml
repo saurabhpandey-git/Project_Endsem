@@ -25,7 +25,7 @@
             android:name=".PlanTripActivity"
             android:exported="false" />
         <activity
-            android:name=".HistoryActivity"
+            android:name=".TripInfoActivity"
             android:exported="false" />
         <activity
             android:name=".ChatActivity"

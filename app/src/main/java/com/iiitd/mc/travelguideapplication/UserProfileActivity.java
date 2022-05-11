@@ -60,14 +60,28 @@ public class UserProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_user_profile);
 
         storageReference= FirebaseStorage.getInstance().getReference();
-
         but_currentTrip = findViewById(R.id.but_currentTrip);
+        String userID = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        reference = FirebaseDatabase.getInstance().getReference().child("Users").child(userID).child("currentTripPlan");
+        System.out.println("++++++++++++++++++++++reference = "+reference);
+        if(reference!=null) {
+            but_currentTrip.setText("Active Trip");
+        }else{
+            but_currentTrip.setText("Plan a trip");
+        }
+
         but_currentTrip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(UserProfileActivity.this, PlanTripActivity.class);
-                intent.putExtra("CurrentUserID", userId);
+                Intent intent = null;
+                if(but_currentTrip.getText().toString().equalsIgnoreCase("Active Trip")){
+                    intent = new Intent(UserProfileActivity.this, TripInfoActivity.class);
+                }
+                else {
+                    intent = new Intent(UserProfileActivity.this, PlanTripActivity.class);
+                }
                 startActivity(intent);
+
             }
         });
 
@@ -158,7 +172,7 @@ public class UserProfileActivity extends AppCompatActivity {
         historyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(UserProfileActivity.this, HistoryActivity.class));
+                startActivity(new Intent(UserProfileActivity.this, TripInfoActivity.class));
             }
         });
 

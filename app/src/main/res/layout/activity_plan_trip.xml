@@ -34,7 +34,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
-                android:text="Address line 1"
+                android:text="Location required"
                 android:textColor="@color/darkest"/>
 
             <TextView
@@ -42,7 +42,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
-                android:text="Address line 2"
+                android:text="\u003c-Click here"
                 android:textColor="@color/darkest"/>
         </LinearLayout>
 
