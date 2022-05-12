@@ -44,6 +44,7 @@ public class HistoryActivity extends AppCompatActivity {
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     historyName.add(dataSnapshot.child("name").getValue().toString());
 
+
                     ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(HistoryActivity.this, android.R.layout.simple_list_item_1, historyName);
                     historyListView.setAdapter(arrayAdapter);
                 }

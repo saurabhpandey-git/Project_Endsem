@@ -47,9 +47,10 @@ import java.util.Locale;
 public class PlanTripActivity extends AppCompatActivity {
 
     ImageButton but_userLocation;
-    Button but_submit;
+    Button but_submit, but_addTraveller, but_addLocation;
     TextView tv_userLocationLine1, tv_userLocationLine2;
-    EditText et_tripName;
+    EditText et_tripName, et_ColleageEmail1, et_ColleageEmail2, et_ColleageEmail3, et_ColleageEmail4, et_ColleageEmail5,
+            et_LocationName1, et_LocationName2, et_LocationName3, et_LocationName4, et_LocationName5;
 
     private DatabaseReference db;
 
@@ -58,6 +59,7 @@ public class PlanTripActivity extends AppCompatActivity {
 
     private FusedLocationProviderClient mFusedLocationClient;
     private int PERMISSION_ID = 44;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +74,65 @@ public class PlanTripActivity extends AppCompatActivity {
 
         et_tripName = findViewById(R.id.et_tripName);
         but_submit = findViewById(R.id.but_submit);
+
+        but_addTraveller = findViewById(R.id.but_addTraveller);
+        but_addLocation = findViewById(R.id.but_addLocation);
+
+        et_LocationName1 = findViewById(R.id.et_LocationName1);
+        et_LocationName2 = findViewById(R.id.et_LocationName2);
+        et_LocationName3 = findViewById(R.id.et_LocationName3);
+        et_LocationName4 = findViewById(R.id.et_LocationName4);
+        et_LocationName5 = findViewById(R.id.et_LocationName5);
+        et_ColleageEmail1 = findViewById(R.id.et_ColleageEmail1);
+        et_ColleageEmail2 = findViewById(R.id.et_ColleageEmail2);
+        et_ColleageEmail3 = findViewById(R.id.et_ColleageEmail3);
+        et_ColleageEmail4 = findViewById(R.id.et_ColleageEmail4);
+        et_ColleageEmail5 = findViewById(R.id.et_ColleageEmail5);
+
+
+
+
+        but_addTraveller.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(et_ColleageEmail1.getVisibility() == View.GONE) {
+                    et_ColleageEmail1.setVisibility(View.VISIBLE);
+                }else if(et_ColleageEmail2.getVisibility() == View.GONE){
+                    et_ColleageEmail2.setVisibility(View.VISIBLE);
+                }else if(et_ColleageEmail3.getVisibility() == View.GONE){
+                    et_ColleageEmail3.setVisibility(View.VISIBLE);
+                }else if(et_ColleageEmail4.getVisibility() == View.GONE){
+                    et_ColleageEmail4.setVisibility(View.VISIBLE);
+                }else if(et_ColleageEmail5.getVisibility() == View.GONE){
+                    et_ColleageEmail5.setVisibility(View.VISIBLE);
+                    but_addTraveller.setVisibility(View.GONE);
+                }
+            }
+        });
+
+        but_addLocation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(et_LocationName1.getVisibility() == View.GONE) {
+                    et_LocationName1.setVisibility(View.VISIBLE);
+                }else if(et_LocationName2.getVisibility() == View.GONE) {
+                    et_LocationName2.setVisibility(View.VISIBLE);
+                }else if(et_LocationName3.getVisibility() == View.GONE) {
+                    et_LocationName3.setVisibility(View.VISIBLE);
+                }else if(et_LocationName4.getVisibility() == View.GONE) {
+                    et_LocationName4.setVisibility(View.VISIBLE);
+                }else if(et_LocationName5.getVisibility() == View.GONE) {
+                    et_LocationName5.setVisibility(View.VISIBLE);
+                    but_addLocation.setVisibility(View.GONE);
+                }
+            }
+        });
+
+
+
+
+
+
 
         but_userLocation.setOnClickListener(new View.OnClickListener() {
             @Override
