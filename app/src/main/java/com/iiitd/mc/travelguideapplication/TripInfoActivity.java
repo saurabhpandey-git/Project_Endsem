@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -23,7 +24,7 @@ public class TripInfoActivity extends AppCompatActivity {
     ListView cotravellerListView, routeListView;
     DatabaseReference database, routedb, dbref;
     ArrayList<HashMap<String,String>> cotravellerArrayList;
-
+    String userID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +34,7 @@ public class TripInfoActivity extends AppCompatActivity {
         cotravellerListView = findViewById(R.id.cotravellerList);
         routeListView = findViewById(R.id.routeList);
 
+        userID = FirebaseAuth.getInstance().getUid();
         dbref = FirebaseDatabase.getInstance().getReference().child("User").child("4").child("currentTripPlan");
 
         cotravellerArrayList = new ArrayList<HashMap<String, String>>();
@@ -48,7 +50,7 @@ public class TripInfoActivity extends AppCompatActivity {
                         System.out.println(dataSnapshot.getValue().toString());
                     }
                     else if(dataSnapshot.getKey().toString().equals("cotravellers")){
-                        DatabaseReference db = FirebaseDatabase.getInstance().getReference().child("User").child("4").child("currentTripPlan").child("cotravellers");
+                        DatabaseReference db = FirebaseDatabase.getInstance().getReference().child("Users").child(userID).child("currentTripPlan").child("cotravellers");
                         db.addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -73,7 +75,7 @@ public class TripInfoActivity extends AppCompatActivity {
                         });
                     }
                     else if(dataSnapshot.getKey().toString().equals("route")){
-                        DatabaseReference db = FirebaseDatabase.getInstance().getReference().child("User").child("4").child("currentTripPlan").child("route");
+                        DatabaseReference db = FirebaseDatabase.getInstance().getReference().child("Users").child(userID).child("currentTripPlan").child("route");
                         db.addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {

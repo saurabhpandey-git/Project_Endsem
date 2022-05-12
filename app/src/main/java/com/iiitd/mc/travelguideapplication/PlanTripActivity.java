@@ -23,6 +23,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -41,18 +42,26 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.iiitd.mc.travelguideapplication.model.ChatGroup;
 import com.iiitd.mc.travelguideapplication.model.Trip;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
 public class PlanTripActivity extends AppCompatActivity {
 
+    DatabaseReference database;
     ImageButton but_userLocation;
     Button but_submit, but_addTraveller, but_addLocation;
     TextView tv_userLocationLine1, tv_userLocationLine2;
-    EditText et_tripName, et_ColleageEmail1, et_ColleageEmail2, et_ColleageEmail3, et_ColleageEmail4, et_ColleageEmail5,
-            et_LocationName1, et_LocationName2, et_LocationName3, et_LocationName4, et_LocationName5;
+    LinearLayout ll_cotravellerinfo1, ll_cotravellerinfo2, ll_cotravellerinfo3, ll_cotravellerinfo4, ll_cotravellerinfo5,
+            ll_locationInfo1, ll_locationInfo2, ll_locationInfo3, ll_locationInfo4, ll_locationInfo5;
+    EditText et_tripName, et_ColleageName1, et_ColleageName2, et_ColleageName3, et_ColleageName4, et_ColleageName5,
+            et_ColleageEmail1, et_ColleageEmail2, et_ColleageEmail3, et_ColleageEmail4, et_ColleageEmail5,
+            et_LocationName11, et_LocationName12, et_LocationName13, et_LocationName14,
+            et_LocationName21, et_LocationName22, et_LocationName23, et_LocationName24,
+            et_LocationName31, et_LocationName32, et_LocationName33, et_LocationName34,
+            et_LocationName41, et_LocationName42, et_LocationName43, et_LocationName44,
+            et_LocationName51, et_LocationName52, et_LocationName53, et_LocationName54;
 
-    private DatabaseReference db;
 
     private LocationManager locationManager;
     private LocationListener locationListener;
@@ -78,33 +87,67 @@ public class PlanTripActivity extends AppCompatActivity {
         but_addTraveller = findViewById(R.id.but_addTraveller);
         but_addLocation = findViewById(R.id.but_addLocation);
 
-        et_LocationName1 = findViewById(R.id.et_LocationName1);
-        et_LocationName2 = findViewById(R.id.et_LocationName2);
-        et_LocationName3 = findViewById(R.id.et_LocationName3);
-        et_LocationName4 = findViewById(R.id.et_LocationName4);
-        et_LocationName5 = findViewById(R.id.et_LocationName5);
+        ll_cotravellerinfo1 = findViewById(R.id.ll_cotravellerinfo1);
+        ll_cotravellerinfo2 = findViewById(R.id.ll_cotravellerinfo2);
+        ll_cotravellerinfo3 = findViewById(R.id.ll_cotravellerinfo3);
+        ll_cotravellerinfo4 = findViewById(R.id.ll_cotravellerinfo4);
+        ll_cotravellerinfo5 = findViewById(R.id.ll_cotravellerinfo5);
+        ll_locationInfo1 = findViewById(R.id.ll_locationInfo1);
+        ll_locationInfo2 = findViewById(R.id.ll_locationInfo2);
+        ll_locationInfo3 = findViewById(R.id.ll_locationInfo3);
+        ll_locationInfo4 = findViewById(R.id.ll_locationInfo4);
+        ll_locationInfo5 = findViewById(R.id.ll_locationInfo5);
+
+        et_ColleageName1 = findViewById(R.id.et_ColleageName1);
+        et_ColleageName2 = findViewById(R.id.et_ColleageName2);
+        et_ColleageName3 = findViewById(R.id.et_ColleageName3);
+        et_ColleageName4 = findViewById(R.id.et_ColleageName4);
+        et_ColleageName5 = findViewById(R.id.et_ColleageName5);
         et_ColleageEmail1 = findViewById(R.id.et_ColleageEmail1);
         et_ColleageEmail2 = findViewById(R.id.et_ColleageEmail2);
         et_ColleageEmail3 = findViewById(R.id.et_ColleageEmail3);
         et_ColleageEmail4 = findViewById(R.id.et_ColleageEmail4);
         et_ColleageEmail5 = findViewById(R.id.et_ColleageEmail5);
 
+        et_LocationName11 = findViewById(R.id.et_LocationName11);
+        et_LocationName12 = findViewById(R.id.et_LocationName12);
+        et_LocationName13 = findViewById(R.id.et_LocationName13);
+        et_LocationName14 = findViewById(R.id.et_LocationName14);
 
+        et_LocationName21 = findViewById(R.id.et_LocationName21);
+        et_LocationName22 = findViewById(R.id.et_LocationName22);
+        et_LocationName23 = findViewById(R.id.et_LocationName23);
+        et_LocationName24 = findViewById(R.id.et_LocationName24);
+
+        et_LocationName31 = findViewById(R.id.et_LocationName31);
+        et_LocationName32 = findViewById(R.id.et_LocationName32);
+        et_LocationName33 = findViewById(R.id.et_LocationName33);
+        et_LocationName34 = findViewById(R.id.et_LocationName34);
+
+        et_LocationName41 = findViewById(R.id.et_LocationName41);
+        et_LocationName42 = findViewById(R.id.et_LocationName42);
+        et_LocationName43 = findViewById(R.id.et_LocationName43);
+        et_LocationName44 = findViewById(R.id.et_LocationName44);
+
+        et_LocationName51 = findViewById(R.id.et_LocationName51);
+        et_LocationName52 = findViewById(R.id.et_LocationName52);
+        et_LocationName53 = findViewById(R.id.et_LocationName53);
+        et_LocationName54 = findViewById(R.id.et_LocationName54);
 
 
         but_addTraveller.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(et_ColleageEmail1.getVisibility() == View.GONE) {
-                    et_ColleageEmail1.setVisibility(View.VISIBLE);
-                }else if(et_ColleageEmail2.getVisibility() == View.GONE){
-                    et_ColleageEmail2.setVisibility(View.VISIBLE);
-                }else if(et_ColleageEmail3.getVisibility() == View.GONE){
-                    et_ColleageEmail3.setVisibility(View.VISIBLE);
-                }else if(et_ColleageEmail4.getVisibility() == View.GONE){
-                    et_ColleageEmail4.setVisibility(View.VISIBLE);
-                }else if(et_ColleageEmail5.getVisibility() == View.GONE){
-                    et_ColleageEmail5.setVisibility(View.VISIBLE);
+                if(ll_cotravellerinfo1.getVisibility() == View.GONE) {
+                    ll_cotravellerinfo1.setVisibility(View.VISIBLE);
+                }else if(ll_cotravellerinfo2.getVisibility() == View.GONE){
+                    ll_cotravellerinfo2.setVisibility(View.VISIBLE);
+                }else if(ll_cotravellerinfo3.getVisibility() == View.GONE){
+                    ll_cotravellerinfo3.setVisibility(View.VISIBLE);
+                }else if(ll_cotravellerinfo4.getVisibility() == View.GONE){
+                    ll_cotravellerinfo4.setVisibility(View.VISIBLE);
+                }else if(ll_cotravellerinfo5.getVisibility() == View.GONE){
+                    ll_cotravellerinfo5.setVisibility(View.VISIBLE);
                     but_addTraveller.setVisibility(View.GONE);
                 }
             }
@@ -113,24 +156,20 @@ public class PlanTripActivity extends AppCompatActivity {
         but_addLocation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(et_LocationName1.getVisibility() == View.GONE) {
-                    et_LocationName1.setVisibility(View.VISIBLE);
-                }else if(et_LocationName2.getVisibility() == View.GONE) {
-                    et_LocationName2.setVisibility(View.VISIBLE);
-                }else if(et_LocationName3.getVisibility() == View.GONE) {
-                    et_LocationName3.setVisibility(View.VISIBLE);
-                }else if(et_LocationName4.getVisibility() == View.GONE) {
-                    et_LocationName4.setVisibility(View.VISIBLE);
-                }else if(et_LocationName5.getVisibility() == View.GONE) {
-                    et_LocationName5.setVisibility(View.VISIBLE);
+                if(ll_locationInfo1.getVisibility() == View.GONE) {
+                    ll_locationInfo1.setVisibility(View.VISIBLE);
+                }else if(ll_locationInfo2.getVisibility() == View.GONE) {
+                    ll_locationInfo2.setVisibility(View.VISIBLE);
+                }else if(ll_locationInfo3.getVisibility() == View.GONE) {
+                    ll_locationInfo3.setVisibility(View.VISIBLE);
+                }else if(ll_locationInfo4.getVisibility() == View.GONE) {
+                    ll_locationInfo4.setVisibility(View.VISIBLE);
+                }else if(ll_locationInfo5.getVisibility() == View.GONE) {
+                    ll_locationInfo5.setVisibility(View.VISIBLE);
                     but_addLocation.setVisibility(View.GONE);
                 }
             }
         });
-
-
-
-
 
 
 
@@ -284,24 +323,95 @@ public class PlanTripActivity extends AppCompatActivity {
 
 
 
-
-
-
     private void formSubmit() {
+
+        List<String> colleageName = new ArrayList<>();
+        List<String> colleageEmail = new ArrayList<>();
+        List<String> LocationName = new ArrayList<>();
+        List<String> LocationCity = new ArrayList<>();
+        List<String> LocationState = new ArrayList<>();
+        List<String> LocationCountry = new ArrayList<>();
+
+        colleageName.add(et_ColleageName1.getText().toString());
+        colleageName.add(et_ColleageName2.getText().toString());
+        colleageName.add(et_ColleageName3.getText().toString());
+        colleageName.add(et_ColleageName4.getText().toString());
+        colleageName.add(et_ColleageName5.getText().toString());
+        colleageEmail.add(et_ColleageEmail1.getText().toString());
+        colleageEmail.add(et_ColleageEmail2.getText().toString());
+        colleageEmail.add(et_ColleageEmail3.getText().toString());
+        colleageEmail.add(et_ColleageEmail4.getText().toString());
+        colleageEmail.add(et_ColleageEmail5.getText().toString());
+
+        LocationName.add(et_LocationName11.getText().toString());
+        LocationCity.add(et_LocationName12.getText().toString());
+        LocationState.add(et_LocationName13.getText().toString());
+        LocationCountry.add(et_LocationName14.getText().toString());
+
+        LocationName.add(et_LocationName21.getText().toString());
+        LocationCity.add(et_LocationName22.getText().toString());
+        LocationState.add(et_LocationName23.getText().toString());
+        LocationCountry.add(et_LocationName24.getText().toString());
+
+        LocationName.add(et_LocationName31.getText().toString());
+        LocationCity.add(et_LocationName32.getText().toString());
+        LocationState.add(et_LocationName33.getText().toString());
+        LocationCountry.add(et_LocationName34.getText().toString());
+
+        LocationName.add(et_LocationName41.getText().toString());
+        LocationCity.add(et_LocationName42.getText().toString());
+        LocationState.add(et_LocationName43.getText().toString());
+        LocationCountry.add(et_LocationName44.getText().toString());
+
+        LocationName.add(et_LocationName51.getText().toString());
+        LocationCity.add(et_LocationName52.getText().toString());
+        LocationState.add(et_LocationName53.getText().toString());
+        LocationCountry.add(et_LocationName54.getText().toString());
+
         String userID = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        db = FirebaseDatabase.getInstance().getReference().child("Users").child(userID);
-        db = db.push();
-        db.setValue(new Trip(et_tripName.getText().toString())).addOnSuccessListener(new OnSuccessListener<Void>() {
-            @Override
-            public void onSuccess(Void unused) {
-                Toast.makeText(getApplicationContext(), "Trip successfully added", Toast.LENGTH_SHORT).show();
-                Log.i("LINE 33", "Trip successfully added");
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Log.i("LINE 38", "Trip could not be added");
-            }
-        });
+        database = FirebaseDatabase.getInstance().getReference().child("Users").child(userID).child("currentTripPlan");
+        database.child("name").setValue(et_tripName.getText().toString());
+
+        int x;
+        if(!colleageName.get(4).equals("")){
+            x = 4;
+        }else if(!colleageName.get(3).equals("")){
+            x = 3;
+        }else if(!colleageName.get(2).equals("")){
+            x = 2;
+        }else if(!colleageName.get(1).equals("")){
+            x = 1;
+        }else{
+            x = 0;
+        }
+        for(int i=0; i<x+1; i++){
+            database = FirebaseDatabase.getInstance().getReference().child("Users").child(userID).child("currentTripPlan").child("cotravellers");
+            database=database.push();
+            database.child("name").setValue(colleageName.get(i));
+            database.child("email").setValue(colleageEmail.get(i));
+        }
+
+        int y;
+        if(!LocationName.get(4).equals("")){
+            y = 4;
+        }else if(!LocationName.get(3).equals("")){
+            y = 3;
+        }else if(!LocationName.get(2).equals("")){
+            y = 2;
+        }else if(!LocationName.get(1).equals("")){
+            y = 1;
+        }else{
+            y = 0;
+        }
+        for(int i=0; i<y+1; i++){
+            database = FirebaseDatabase.getInstance().getReference().child("Users").child(userID).child("currentTripPlan").child("route");
+            database = database.push();
+            database.child("location").setValue(LocationName.get(i));
+            database.child("city").setValue(LocationCity.get(i));
+            database.child("state").setValue(LocationState.get(i));
+            database.child("country").setValue(LocationCountry.get(i));
+        }
+        startActivity(new Intent(PlanTripActivity.this, UserProfileActivity.class));
+
     }
 }

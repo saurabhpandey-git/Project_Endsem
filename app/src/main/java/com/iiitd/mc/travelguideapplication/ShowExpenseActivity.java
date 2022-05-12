@@ -55,8 +55,10 @@ public class ShowExpenseActivity extends AppCompatActivity {
                     System.out.println("Expense"+dataSnapshot.child("amount").getValue());
                     String amount = String.valueOf(dataSnapshot.child("amount").getValue());
                     total += Integer.parseInt(amount);
-                    mHashMap.put("expensePurpose", amount);
-                    mHashMap.put("expenseAmount", dataSnapshot.child("purpose").getValue().toString());
+                    mHashMap.put("expensePurpose", dataSnapshot.child("purpose").getValue().toString());
+                    mHashMap.put("expenseAmount", amount);
+                    mHashMap.put("expenseComment", dataSnapshot.child("comment").getValue().toString());
+                    mHashMap.put("expenseUserId", dataSnapshot.child("userID").getValue().toString());
                     expenseArrayList.add(mHashMap);
 
                     System.out.println(expenseArrayList.get(expenseArrayList.size()-1));

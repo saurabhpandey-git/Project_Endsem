@@ -81,9 +81,6 @@
             android:name="com.google.android.actions"
             android:resource="@drawable/corner" />
 
-        <activity
-            android:name=".MainActivity"
-            android:exported="true" />
     </application>
 
 </manifest>

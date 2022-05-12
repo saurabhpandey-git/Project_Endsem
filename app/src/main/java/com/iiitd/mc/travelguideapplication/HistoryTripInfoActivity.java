@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -23,7 +24,7 @@ public class HistoryTripInfoActivity extends AppCompatActivity {
     ListView cotravellerListView, routeListView;
     DatabaseReference database, routedb, dbref;
     ArrayList<HashMap<String,String>> cotravellerArrayList;
-
+    String userID = FirebaseAuth.getInstance().getUid();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +36,7 @@ public class HistoryTripInfoActivity extends AppCompatActivity {
 
         String selectedTrip = getIntent().getExtras().getString("Selected Trip Name");
 
-        dbref = FirebaseDatabase.getInstance().getReference().child("User").child("4").child("travelHistory");
+        dbref = FirebaseDatabase.getInstance().getReference().child("Users").child(userID).child("travelHistory");
 
         cotravellerArrayList = new ArrayList<HashMap<String, String>>();
         ArrayList<String> routeArrayList = new ArrayList<>();

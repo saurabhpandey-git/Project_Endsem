@@ -12,39 +12,30 @@
         android:orientation="vertical"
         android:background="@drawable/listcorner">
 
-                <ImageView
-                    android:id="@+id/placesImage"
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:adjustViewBounds="true"
-                    tools:srcCompat="@tools:sample/backgrounds/scenic" />
+        <ImageView
+            android:id="@+id/placesImage"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            tools:srcCompat="@tools:sample/backgrounds/scenic"/>
 
         <TextView
             android:id="@+id/placeTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Title"
-            android:paddingRight="10dp"
+            android:paddingRight="20dp"
             android:paddingTop="8dp"
             android:paddingBottom="20dp"
-            android:gravity="right"
+            android:textAlignment="textEnd"
+            android:fontFamily="sans-serif-smallcaps"
+            android:textSize="18dp"
             android:textColor="@color/white"
             android:textColorHint="@color/white">
 
         </TextView>
 
-<!--        <TextView-->
-<!--            android:id="@+id/placeUrl"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:hint="Url"-->
-<!--            android:paddingRight="10dp"-->
-<!--            android:paddingTop="8dp"-->
-<!--            android:paddingBottom="20dp"-->
-<!--            android:gravity="right"-->
-<!--            android:textColor="@color/white"-->
-<!--            android:textColorHint="@color/white">-->
-<!--        </TextView>-->
 
     </LinearLayout>
 

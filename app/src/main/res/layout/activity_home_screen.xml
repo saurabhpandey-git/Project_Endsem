@@ -98,8 +98,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="Some places worth visiting..."
-            android:textSize="18dp"
-            android:fontFamily="monospace"
+            android:textSize="25dp"
+            android:fontFamily="cursive"
             android:padding="10dp"
             android:layout_marginLeft="5dp"
             android:textColor="@color/white"/>

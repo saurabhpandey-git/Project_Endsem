@@ -53,6 +53,9 @@ public class ExpenseAdapter extends BaseAdapter {
         // set id's
         h.name = (TextView)(view.findViewById(R.id.expenseName));
         h.price = (TextView)(view.findViewById(R.id.expenseAmount));
+        h.comment = view.findViewById(R.id.expComment);
+        h.userId = view.findViewById(R.id.expUserID);
+
 //        h.stock = (TextView)(view.findViewById(R.id.stock));
 
         HashMap<String,String> hashMap = new HashMap<>();
@@ -60,6 +63,8 @@ public class ExpenseAdapter extends BaseAdapter {
 
         h.name.setText(hashMap.get("expensePurpose"));
         h.price.setText(hashMap.get("expenseAmount"));
+        h.comment.setText(hashMap.get("expenseComment"));
+        h.userId.setText(hashMap.get("expenseUserId"));
 //        h.stock.setText(hashMap.get("stockKey"));
 
 
@@ -69,7 +74,7 @@ public class ExpenseAdapter extends BaseAdapter {
 
     private class Holder
     {
-        TextView name;
-        TextView price;
+        TextView name, comment, userId, price;
+
     }
 }

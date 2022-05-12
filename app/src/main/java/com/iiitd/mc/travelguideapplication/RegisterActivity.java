@@ -59,7 +59,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         switch (v.getId()){
 
             case R.id.roveRegisterPageLogo:
-                startActivity(new Intent(this, MainActivity.class));
+                startActivity(new Intent(this, HomeScreenActivity.class));
                 break;
 
             case R.id.signupButton:

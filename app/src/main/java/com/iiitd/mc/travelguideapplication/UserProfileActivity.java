@@ -28,6 +28,8 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.iiitd.mc.travelguideapplication.model.AppUser;
+import com.iiitd.mc.travelguideapplication.model.Expenses;
+import com.iiitd.mc.travelguideapplication.model.Trip;
 import com.squareup.picasso.Picasso;
 
 public class UserProfileActivity extends AppCompatActivity {
@@ -40,7 +42,7 @@ public class UserProfileActivity extends AppCompatActivity {
 
     private ImageView userImage;
 
-    private Button logout, but_currentTrip;
+    private Button logout, but_currentTrip, but_endTrip;
 
     //chat screen
     private ImageButton chatButton;
@@ -61,6 +63,8 @@ public class UserProfileActivity extends AppCompatActivity {
 
         storageReference= FirebaseStorage.getInstance().getReference();
         but_currentTrip = findViewById(R.id.but_currentTrip);
+        but_endTrip = findViewById(R.id.but_endTrip);
+
         String userID = FirebaseAuth.getInstance().getCurrentUser().getUid();
         reference = FirebaseDatabase.getInstance().getReference().child("Users").child(userID);
         reference.addValueEventListener(new ValueEventListener() {
@@ -74,15 +78,18 @@ public class UserProfileActivity extends AppCompatActivity {
                 }
                 if(currentTripExists){
                     but_currentTrip.setText("Active Trip");
+                    but_endTrip.setVisibility(View.VISIBLE);
                 }
                 else{
                     but_currentTrip.setText("Plan a trip");
+                    if(but_endTrip.getVisibility()==View.VISIBLE) {
+                        but_endTrip.setText(View.GONE);
+                    }
                 }
 
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
             }
         });
 
@@ -91,6 +98,40 @@ public class UserProfileActivity extends AppCompatActivity {
         }else{
             but_currentTrip.setText("Plan a trip");
         }
+
+
+        but_endTrip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DatabaseReference reference1 = null, reference2 = null;
+                reference = FirebaseDatabase.getInstance().getReference().child("Users").child(userID).child("currentTripPlan");
+                reference2 = FirebaseDatabase.getInstance().getReference().child("Users").child(userID).child("history");
+                reference2.push();
+
+                reference.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        System.out.println("======================"+snapshot.getValue());
+                        reference.setValue(snapshot.child("name").getValue());
+                        reference.setValue(snapshot.child("expenseRecords").getValue());
+                        reference.setValue(snapshot.child("route").getValue());
+                        reference.setValue(snapshot.child("cotravellers").getValue());
+                        reference.push();
+                        but_currentTrip.setText("Plan a trip");
+                        but_endTrip.setVisibility(View.GONE);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
+
+            }
+        });
+
+
 
         but_currentTrip.setOnClickListener(new View.OnClickListener() {
             @Override

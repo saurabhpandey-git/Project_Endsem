@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".UserProfileActivity"
     android:background="@color/darkest"
     android:orientation="vertical">
 
@@ -13,7 +13,7 @@
         android:id="@+id/userImage"
         android:layout_width="match_parent"
         android:layout_height="400dp"
-        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+        tools:srcCompat="@drawable/picupload" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -34,11 +34,11 @@
                 android:layout_height="wrap_content"
                 android:text="Person Name"
                 android:textColor="@color/black"
-                android:textSize="25dp"
+                android:textSize="20dp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.062"
+                app:layout_constraintHorizontal_bias="0.057"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.043" />
@@ -57,12 +57,27 @@
                 android:id="@+id/but_currentTrip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@drawable/tripcorner"
                 android:text="Active Trip"
                 android:textAllCaps="false"
-                android:background="@drawable/tripcorner"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.895"
+                app:layout_constraintHorizontal_bias="0.946"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.056" />
+
+            <Button
+                android:id="@+id/but_endTrip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/tripcorner2"
+                android:text="End Trip"
+                android:visibility="gone"
+                android:textAllCaps="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.55"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.056" />
@@ -196,6 +211,7 @@
                 android:layout_marginEnd="159dp"
                 android:layout_marginBottom="16dp"
                 android:text="sign out"
+                android:background="@drawable/formbutton"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

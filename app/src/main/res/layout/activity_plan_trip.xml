@@ -50,7 +50,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textSize="20sp"
-                        android:text="Location Required"
+                        android:text="Location"
                         android:textAlignment="center"
                         android:fontFamily="sans-serif-smallcaps"
                         android:padding="5dp"
@@ -62,7 +62,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textSize="20sp"
-                        android:text="\u003c- Click here"
+                        android:text="Address line 2"
                         android:textAlignment="center"
                         android:fontFamily="sans-serif-smallcaps"
                         android:padding="5dp"
@@ -116,6 +116,7 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp">
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -128,95 +129,218 @@
                     android:layout_margin="15dp"
                     android:padding="5dp"/>
 
-                <EditText
-                    android:id="@+id/et_ColleageEmail1"
+                <LinearLayout
+                    android:id="@+id/ll_cotravellerinfo1"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_marginBottom="15dp"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:fontFamily="casual"
-                    android:textStyle="bold"
-                    android:hint="xyz@gmail.com"
-                    android:visibility="gone"
-                    android:minHeight="48dp"
-                    android:padding="10dp"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/lightgray"
-                    android:textSize="22dp" />
+                    android:visibility="gone">
 
-                <EditText
-                    android:id="@+id/et_ColleageEmail2"
-                    android:visibility="gone"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_marginBottom="15dp"
-                    android:layout_weight="1"
-                    android:fontFamily="casual"
-                    android:textStyle="bold"
-                    android:hint="xyz@gmail.com"
-                    android:minHeight="48dp"
-                    android:padding="10dp"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/lightgray"
-                    android:textSize="22dp" />
+                    <EditText
+                        android:id="@+id/et_ColleageName1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_weight="1"
+                        android:fontFamily="casual"
+                        android:hint="Name"
+                        android:minHeight="48dp"
+                        android:padding="10dp"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/lightgray"
+                        android:textSize="22dp"
+                        android:textStyle="bold" />
 
-                <EditText
-                    android:id="@+id/et_ColleageEmail3"
-                    android:visibility="gone"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_marginBottom="15dp"
-                    android:layout_weight="1"
-                    android:fontFamily="casual"
-                    android:textStyle="bold"
-                    android:hint="xyz@gmail.com"
-                    android:minHeight="48dp"
-                    android:padding="10dp"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/lightgray"
-                    android:textSize="22dp" />
+                    <EditText
+                        android:id="@+id/et_ColleageEmail1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_weight="1"
+                        android:fontFamily="casual"
+                        android:hint="Email"
+                        android:minHeight="48dp"
+                        android:padding="10dp"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/lightgray"
+                        android:textSize="22dp"
+                        android:textStyle="bold" />
 
-                <EditText
-                    android:id="@+id/et_ColleageEmail4"
-                    android:visibility="gone"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_marginBottom="15dp"
-                    android:layout_weight="1"
-                    android:fontFamily="casual"
-                    android:textStyle="bold"
-                    android:hint="xyz@gmail.com"
-                    android:minHeight="48dp"
-                    android:padding="10dp"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/lightgray"
-                    android:textSize="22dp" />
 
-                <EditText
-                    android:id="@+id/et_ColleageEmail5"
-                    android:visibility="gone"
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_cotravellerinfo2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_marginBottom="15dp"
+                    android:visibility="gone">
+
+                    <EditText
+                        android:id="@+id/et_ColleageName2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_weight="1"
+                        android:fontFamily="casual"
+                        android:hint="Name"
+                        android:minHeight="48dp"
+                        android:padding="10dp"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/lightgray"
+                        android:textSize="22dp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/et_ColleageEmail2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_weight="1"
+                        android:fontFamily="casual"
+                        android:hint="Email"
+                        android:minHeight="48dp"
+                        android:padding="10dp"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/lightgray"
+                        android:textSize="22dp"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_cotravellerinfo3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:fontFamily="casual"
-                    android:textStyle="bold"
-                    android:hint="xyz@gmail.com"
-                    android:minHeight="48dp"
-                    android:padding="10dp"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/lightgray"
-                    android:textSize="22dp" />
+                    android:visibility="gone">
+
+                    <EditText
+                        android:id="@+id/et_ColleageName3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_weight="1"
+                        android:fontFamily="casual"
+                        android:hint="Name"
+                        android:minHeight="48dp"
+                        android:padding="10dp"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/lightgray"
+                        android:textSize="22dp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/et_ColleageEmail3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_weight="1"
+                        android:fontFamily="casual"
+                        android:hint="Email"
+                        android:minHeight="48dp"
+                        android:padding="10dp"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/lightgray"
+                        android:textSize="22dp"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_cotravellerinfo4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="gone">
+
+                    <EditText
+                        android:id="@+id/et_ColleageName4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_weight="1"
+                        android:fontFamily="casual"
+                        android:hint="Name"
+                        android:minHeight="48dp"
+                        android:padding="10dp"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/lightgray"
+                        android:textSize="22dp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/et_ColleageEmail4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_weight="1"
+                        android:fontFamily="casual"
+                        android:hint="Email"
+                        android:minHeight="48dp"
+                        android:padding="10dp"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/lightgray"
+                        android:textSize="22dp"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_cotravellerinfo5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+
+                    <EditText
+                        android:id="@+id/et_ColleageName5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_weight="1"
+                        android:fontFamily="casual"
+                        android:textStyle="bold"
+                        android:hint="Name"
+                        android:minHeight="48dp"
+                        android:padding="10dp"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/lightgray"
+                        android:textSize="22dp" />
+
+                    <EditText
+                        android:id="@+id/et_ColleageEmail5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_weight="1"
+                        android:fontFamily="casual"
+                        android:textStyle="bold"
+                        android:hint="Email"
+                        android:minHeight="48dp"
+                        android:padding="10dp"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/lightgray"
+                        android:textSize="22dp" />
+
+
+                </LinearLayout>
 
 
                 <Button
@@ -259,98 +383,468 @@
                     android:textStyle="bold"
                     android:fontFamily="casual"
                     android:textColor="@color/white"
-                    android:layout_margin="15dp"
+                    android:layout_margin="10dp"
                     android:padding="5dp"/>
 
-                <EditText
-                    android:id="@+id/et_LocationName1"
-                    android:visibility="gone"
+                <LinearLayout
+                    android:id="@+id/ll_locationInfo1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_marginBottom="15dp"
-                    android:layout_weight="1"
-                    android:fontFamily="casual"
-                    android:hint="Lonavala"
-                    android:textStyle="bold"
-                    android:minHeight="48dp"
-                    android:padding="10dp"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/lightgray"
-                    android:textSize="22dp" />
+                    android:orientation="vertical"
+                    android:background="@drawable/formfieldbg"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:visibility="gone">
 
-                <EditText
-                    android:id="@+id/et_LocationName2"
-                    android:visibility="gone"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_marginBottom="15dp"
-                    android:layout_weight="1"
-                    android:fontFamily="casual"
-                    android:hint="Lonavala"
-                    android:textStyle="bold"
-                    android:minHeight="48dp"
-                    android:padding="10dp"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/lightgray"
-                    android:textSize="22dp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
 
-                <EditText
-                    android:id="@+id/et_LocationName3"
-                    android:visibility="gone"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_marginBottom="15dp"
-                    android:layout_weight="1"
-                    android:fontFamily="casual"
-                    android:hint="Lonavala"
-                    android:textStyle="bold"
-                    android:minHeight="48dp"
-                    android:padding="10dp"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/lightgray"
-                    android:textSize="22dp" />
+                        <EditText
+                            android:id="@+id/et_LocationName11"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_weight="1"
+                            android:fontFamily="casual"
+                            android:hint="Location"
+                            android:textStyle="bold"
+                            android:minHeight="48dp"
+                            android:padding="10dp"
+                            android:textColor="@color/white"
+                            android:textColorHint="@color/lightgray"
+                            android:textSize="22dp" />
 
-                <EditText
-                    android:id="@+id/et_LocationName4"
-                    android:visibility="gone"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_marginBottom="15dp"
-                    android:layout_weight="1"
-                    android:fontFamily="casual"
-                    android:hint="Lonavala"
-                    android:textStyle="bold"
-                    android:minHeight="48dp"
-                    android:padding="10dp"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/lightgray"
-                    android:textSize="22dp" />
+                        <EditText
+                            android:id="@+id/et_LocationName12"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_weight="1"
+                            android:fontFamily="casual"
+                            android:hint="City"
+                            android:textStyle="bold"
+                            android:minHeight="48dp"
+                            android:padding="10dp"
+                            android:textColor="@color/white"
+                            android:textColorHint="@color/lightgray"
+                            android:textSize="22dp" />
 
-                <EditText
-                    android:id="@+id/et_LocationName5"
-                    android:visibility="gone"
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/et_LocationName13"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_weight="1"
+                            android:fontFamily="casual"
+                            android:hint="State"
+                            android:textStyle="bold"
+                            android:minHeight="48dp"
+                            android:padding="10dp"
+                            android:textColor="@color/white"
+                            android:textColorHint="@color/lightgray"
+                            android:textSize="22dp" />
+
+                        <EditText
+                            android:id="@+id/et_LocationName14"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_weight="1"
+                            android:fontFamily="casual"
+                            android:hint="Country"
+                            android:textStyle="bold"
+                            android:minHeight="48dp"
+                            android:padding="10dp"
+                            android:textColor="@color/white"
+                            android:textColorHint="@color/lightgray"
+                            android:textSize="22dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_locationInfo2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_marginBottom="15dp"
-                    android:layout_weight="1"
-                    android:fontFamily="casual"
-                    android:hint="Lonavala"
-                    android:textStyle="bold"
-                    android:minHeight="48dp"
-                    android:padding="10dp"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/lightgray"
-                    android:textSize="22dp" />
+                    android:orientation="vertical"
+                    android:background="@drawable/formfieldbg"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <EditText
+                            android:id="@+id/et_LocationName21"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_weight="1"
+                            android:fontFamily="casual"
+                            android:hint="Location"
+                            android:textStyle="bold"
+                            android:minHeight="48dp"
+                            android:padding="10dp"
+                            android:textColor="@color/white"
+                            android:textColorHint="@color/lightgray"
+                            android:textSize="22dp" />
+
+                        <EditText
+                            android:id="@+id/et_LocationName22"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_weight="1"
+                            android:fontFamily="casual"
+                            android:hint="City"
+                            android:textStyle="bold"
+                            android:minHeight="48dp"
+                            android:padding="10dp"
+                            android:textColor="@color/white"
+                            android:textColorHint="@color/lightgray"
+                            android:textSize="22dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/et_LocationName23"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_weight="1"
+                            android:fontFamily="casual"
+                            android:hint="State"
+                            android:textStyle="bold"
+                            android:minHeight="48dp"
+                            android:padding="10dp"
+                            android:textColor="@color/white"
+                            android:textColorHint="@color/lightgray"
+                            android:textSize="22dp" />
+
+                        <EditText
+                            android:id="@+id/et_LocationName24"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_weight="1"
+                            android:fontFamily="casual"
+                            android:hint="Country"
+                            android:textStyle="bold"
+                            android:minHeight="48dp"
+                            android:padding="10dp"
+                            android:textColor="@color/white"
+                            android:textColorHint="@color/lightgray"
+                            android:textSize="22dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_locationInfo3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/formfieldbg"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <EditText
+                            android:id="@+id/et_LocationName31"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_weight="1"
+                            android:fontFamily="casual"
+                            android:hint="Location"
+                            android:textStyle="bold"
+                            android:minHeight="48dp"
+                            android:padding="10dp"
+                            android:textColor="@color/white"
+                            android:textColorHint="@color/lightgray"
+                            android:textSize="22dp" />
+
+                        <EditText
+                            android:id="@+id/et_LocationName32"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_weight="1"
+                            android:fontFamily="casual"
+                            android:hint="City"
+                            android:textStyle="bold"
+                            android:minHeight="48dp"
+                            android:padding="10dp"
+                            android:textColor="@color/white"
+                            android:textColorHint="@color/lightgray"
+                            android:textSize="22dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/et_LocationName33"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_weight="1"
+                            android:fontFamily="casual"
+                            android:hint="State"
+                            android:textStyle="bold"
+                            android:minHeight="48dp"
+                            android:padding="10dp"
+                            android:textColor="@color/white"
+                            android:textColorHint="@color/lightgray"
+                            android:textSize="22dp" />
+
+                        <EditText
+                            android:id="@+id/et_LocationName34"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_weight="1"
+                            android:fontFamily="casual"
+                            android:hint="Country"
+                            android:textStyle="bold"
+                            android:minHeight="48dp"
+                            android:padding="10dp"
+                            android:textColor="@color/white"
+                            android:textColorHint="@color/lightgray"
+                            android:textSize="22dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_locationInfo4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/formfieldbg"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <EditText
+                            android:id="@+id/et_LocationName41"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_weight="1"
+                            android:fontFamily="casual"
+                            android:hint="Location"
+                            android:textStyle="bold"
+                            android:minHeight="48dp"
+                            android:padding="10dp"
+                            android:textColor="@color/white"
+                            android:textColorHint="@color/lightgray"
+                            android:textSize="22dp" />
+
+                        <EditText
+                            android:id="@+id/et_LocationName42"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_weight="1"
+                            android:fontFamily="casual"
+                            android:hint="City"
+                            android:textStyle="bold"
+                            android:minHeight="48dp"
+                            android:padding="10dp"
+                            android:textColor="@color/white"
+                            android:textColorHint="@color/lightgray"
+                            android:textSize="22dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/et_LocationName43"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_weight="1"
+                            android:fontFamily="casual"
+                            android:hint="State"
+                            android:textStyle="bold"
+                            android:minHeight="48dp"
+                            android:padding="10dp"
+                            android:textColor="@color/white"
+                            android:textColorHint="@color/lightgray"
+                            android:textSize="22dp" />
+
+                        <EditText
+                            android:id="@+id/et_LocationName44"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_weight="1"
+                            android:fontFamily="casual"
+                            android:hint="Country"
+                            android:textStyle="bold"
+                            android:minHeight="48dp"
+                            android:padding="10dp"
+                            android:textColor="@color/white"
+                            android:textColorHint="@color/lightgray"
+                            android:textSize="22dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_locationInfo5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/formfieldbg"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <EditText
+                            android:id="@+id/et_LocationName51"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_weight="1"
+                            android:fontFamily="casual"
+                            android:hint="Location"
+                            android:textStyle="bold"
+                            android:minHeight="48dp"
+                            android:padding="10dp"
+                            android:textColor="@color/white"
+                            android:textColorHint="@color/lightgray"
+                            android:textSize="22dp" />
+
+                        <EditText
+                            android:id="@+id/et_LocationName52"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_weight="1"
+                            android:fontFamily="casual"
+                            android:hint="City"
+                            android:textStyle="bold"
+                            android:minHeight="48dp"
+                            android:padding="10dp"
+                            android:textColor="@color/white"
+                            android:textColorHint="@color/lightgray"
+                            android:textSize="22dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/et_LocationName53"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_weight="1"
+                            android:fontFamily="casual"
+                            android:hint="State"
+                            android:textStyle="bold"
+                            android:minHeight="48dp"
+                            android:padding="10dp"
+                            android:textColor="@color/white"
+                            android:textColorHint="@color/lightgray"
+                            android:textSize="22dp" />
+
+                        <EditText
+                            android:id="@+id/et_LocationName54"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_weight="1"
+                            android:fontFamily="casual"
+                            android:hint="Country"
+                            android:textStyle="bold"
+                            android:minHeight="48dp"
+                            android:padding="10dp"
+                            android:textColor="@color/white"
+                            android:textColorHint="@color/lightgray"
+                            android:textSize="22dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
 
 
                 <Button
@@ -398,10 +892,6 @@
                     android:shadowDy="10"
                     android:shadowRadius="5"/>
             </LinearLayout>
-
-
-
-
 
         </LinearLayout>
     </ScrollView>

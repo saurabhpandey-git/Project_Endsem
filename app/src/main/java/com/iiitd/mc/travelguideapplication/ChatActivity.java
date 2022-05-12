@@ -41,7 +41,7 @@ public class ChatActivity extends AppCompatActivity {
 
         userID = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
-        dbase=FirebaseDatabase.getInstance().getReference().child("Users").child(userID).child("Chats");
+        dbase=FirebaseDatabase.getInstance().getReference().child("Users").child(userID).child("chats");
         dbase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -49,16 +49,17 @@ public class ChatActivity extends AppCompatActivity {
                 for(DataSnapshot ds:snapshot.getChildren()){
                     if(ds.child("Sender").getValue().toString().length()!=0) {
                         String a = ds.child("Sender").getValue().toString() + " : " + ds.child("Message").getValue().toString();
-                        //Toast.makeText(groupChats.this, ""+a, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ChatActivity.this, ""+a, Toast.LENGTH_SHORT).show();
                         chatHistory.add(a);
+
                     }
                     //Toast.makeText(groupChats.this, "chatHis"+chatHis.size(), Toast.LENGTH_SHORT).show();
 
 
                 }
-
                 aAdapter=new ArrayAdapter<String>(ChatActivity.this, android.R.layout.simple_list_item_1,chatHistory);
                 lv.setAdapter(aAdapter);
+
                 // et.setText("");
             }
 
@@ -69,17 +70,17 @@ public class ChatActivity extends AppCompatActivity {
 
         });
 
-
-        dbase.child(FirebaseAuth.getInstance().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+        dbase=FirebaseDatabase.getInstance().getReference().child("Users").child(userID);
+        dbase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 AppUser userProfile = snapshot.getValue(AppUser.class);
+                username = userProfile.getName();
                 System.out.println("Snapshot = "+ snapshot);
-                System.out.println("User Name = "+userProfile.getName()+" , user age = "+userProfile.getAge());
-                if(userProfile!=null){
-                    username = userProfile.getName();
-                }
+                System.out.println("User Name +++++++++++++++++++++++++++++++= "+userProfile.getName()+" , user age = "+userProfile.getAge());
+
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 Toast.makeText(ChatActivity.this, "Something Wrong Happened!", Toast.LENGTH_SHORT).show();
@@ -91,12 +92,15 @@ public class ChatActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 //                Toast.makeText(ChatActivity.this, ""+getIntent().getExtras().get("ChatRoom").toString(), Toast.LENGTH_SHORT).show();
-
+//                chatHistory.clear();
                 dbase=FirebaseDatabase.getInstance().getReference().child("Users").child(userID).child("chats");
                 dbase=dbase.push();
-                dbase.child("Message").setValue(et.getText().toString());
+                String msg = et.getText().toString();
+                dbase.child("Message").setValue(msg);
                 dbase.child("Sender").setValue(username);
-//
+                chatHistory.add(username + " : " +msg);
+                aAdapter=new ArrayAdapter<String>(ChatActivity.this, android.R.layout.simple_list_item_1,chatHistory);
+                lv.setAdapter(aAdapter);
                 et.setText("");
             }
         });

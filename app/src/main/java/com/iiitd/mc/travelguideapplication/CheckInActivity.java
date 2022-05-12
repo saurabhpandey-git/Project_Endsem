@@ -58,7 +58,7 @@ public class CheckInActivity extends AppCompatActivity {
         @Override
         protected Void doInBackground(Void... arg0) {
             // TODO Auto-generated method stub
-            PlacesService service = new PlacesService("AIzaSyBWqjeho01BCYRu77UsbQYVKGhK0FJmnqw");
+            PlacesService service = new PlacesService("AIzaSyDG17cs9_MZU77oV09R5phXsxL_uzf890Y");
             List<Place> findPlaces = service.findPlaces(28.632808,77.218276,"hospital");  // hospiral for hospital
             // atm for ATM
 
