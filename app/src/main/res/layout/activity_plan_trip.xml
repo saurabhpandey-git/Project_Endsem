@@ -8,86 +8,401 @@
     android:orientation="vertical"
     android:background="@color/dark">
 
-    <LinearLayout
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="@drawable/locationarea"
-        android:layout_margin="20dp">
+        android:layout_height="match_parent"
+        android:contentDescription="Scroll View">
 
-        <ImageButton
-            android:id="@+id/but_userLocation"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_margin="20dp"
-            android:background="@drawable/formbutton"
-            android:backgroundTint="@color/blue">
-
-        </ImageButton>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_margin="20dp">
-            <TextView
-                android:id="@+id/tv_userLocationLine1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:text="Location required"
-                android:textColor="@color/darkest"/>
+            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tv_userLocationLine2"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:text="\u003c-Click here"
-                android:textColor="@color/darkest"/>
+                android:orientation="horizontal"
+                android:background="@drawable/locationarea"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
+
+                <ImageButton
+                    android:id="@+id/but_userLocation"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_margin="20dp"
+                    android:background="@drawable/currentlocation"
+                    android:contentDescription="Location">
+
+                </ImageButton>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginRight="20dp">
+                    <TextView
+                        android:id="@+id/tv_userLocationLine1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:text="Location Required"
+                        android:textAlignment="center"
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:padding="5dp"
+                        android:textStyle="italic"
+                        android:textColor="@color/darkest"/>
+
+                    <TextView
+                        android:id="@+id/tv_userLocationLine2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:text="\u003c- Click here"
+                        android:textAlignment="center"
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:padding="5dp"
+                        android:textStyle="italic"
+                        android:textColor="@color/darkest"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/formfieldbg"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Trip Name : "
+                    android:layout_weight="1"
+                    android:textSize="24sp"
+                    android:fontFamily="casual"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:layout_margin="15dp"
+                    android:padding="5dp"/>
+
+                <EditText
+                    android:id="@+id/et_tripName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:layout_weight="1"
+                    android:fontFamily="casual"
+                    android:textStyle="bold"
+                    android:hint="College Trip"
+                    android:minHeight="48dp"
+                    android:padding="10dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/lightgray"
+                    android:textSize="22sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/formfieldbg"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Add co-travellers email :"
+                    android:layout_weight="1"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:fontFamily="casual"
+                    android:textColor="@color/white"
+                    android:layout_margin="15dp"
+                    android:padding="5dp"/>
+
+                <EditText
+                    android:id="@+id/et_ColleageEmail1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_weight="1"
+                    android:fontFamily="casual"
+                    android:textStyle="bold"
+                    android:hint="xyz@gmail.com"
+                    android:visibility="gone"
+                    android:minHeight="48dp"
+                    android:padding="10dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/lightgray"
+                    android:textSize="22dp" />
+
+                <EditText
+                    android:id="@+id/et_ColleageEmail2"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_weight="1"
+                    android:fontFamily="casual"
+                    android:textStyle="bold"
+                    android:hint="xyz@gmail.com"
+                    android:minHeight="48dp"
+                    android:padding="10dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/lightgray"
+                    android:textSize="22dp" />
+
+                <EditText
+                    android:id="@+id/et_ColleageEmail3"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_weight="1"
+                    android:fontFamily="casual"
+                    android:textStyle="bold"
+                    android:hint="xyz@gmail.com"
+                    android:minHeight="48dp"
+                    android:padding="10dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/lightgray"
+                    android:textSize="22dp" />
+
+                <EditText
+                    android:id="@+id/et_ColleageEmail4"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_weight="1"
+                    android:fontFamily="casual"
+                    android:textStyle="bold"
+                    android:hint="xyz@gmail.com"
+                    android:minHeight="48dp"
+                    android:padding="10dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/lightgray"
+                    android:textSize="22dp" />
+
+                <EditText
+                    android:id="@+id/et_ColleageEmail5"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_weight="1"
+                    android:fontFamily="casual"
+                    android:textStyle="bold"
+                    android:hint="xyz@gmail.com"
+                    android:minHeight="48dp"
+                    android:padding="10dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/lightgray"
+                    android:textSize="22dp" />
+
+
+                <Button
+                    android:id="@+id/but_addTraveller"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:textSize="18dp"
+                    android:textColor="@color/white"
+                    android:text="+ Add Traveller"
+                    android:fontFamily="casual"
+                    android:textStyle="bold"
+                    android:layout_marginRight="25dp"
+                    android:background="@drawable/formbutton"
+                    android:contentDescription="Add travellers"
+                    android:layout_marginBottom="10dp"
+                    android:shadowColor="@color/black"
+                    android:shadowDx="10"
+                    android:shadowDy="10"
+                    android:shadowRadius="5">
+                </Button>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/formfieldbg"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Add Location :"
+                    android:layout_weight="1"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:fontFamily="casual"
+                    android:textColor="@color/white"
+                    android:layout_margin="15dp"
+                    android:padding="5dp"/>
+
+                <EditText
+                    android:id="@+id/et_LocationName1"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_weight="1"
+                    android:fontFamily="casual"
+                    android:hint="Lonavala"
+                    android:textStyle="bold"
+                    android:minHeight="48dp"
+                    android:padding="10dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/lightgray"
+                    android:textSize="22dp" />
+
+                <EditText
+                    android:id="@+id/et_LocationName2"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_weight="1"
+                    android:fontFamily="casual"
+                    android:hint="Lonavala"
+                    android:textStyle="bold"
+                    android:minHeight="48dp"
+                    android:padding="10dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/lightgray"
+                    android:textSize="22dp" />
+
+                <EditText
+                    android:id="@+id/et_LocationName3"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_weight="1"
+                    android:fontFamily="casual"
+                    android:hint="Lonavala"
+                    android:textStyle="bold"
+                    android:minHeight="48dp"
+                    android:padding="10dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/lightgray"
+                    android:textSize="22dp" />
+
+                <EditText
+                    android:id="@+id/et_LocationName4"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_weight="1"
+                    android:fontFamily="casual"
+                    android:hint="Lonavala"
+                    android:textStyle="bold"
+                    android:minHeight="48dp"
+                    android:padding="10dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/lightgray"
+                    android:textSize="22dp" />
+
+                <EditText
+                    android:id="@+id/et_LocationName5"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_weight="1"
+                    android:fontFamily="casual"
+                    android:hint="Lonavala"
+                    android:textStyle="bold"
+                    android:minHeight="48dp"
+                    android:padding="10dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/lightgray"
+                    android:textSize="22dp" />
+
+
+                <Button
+                    android:id="@+id/but_addLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:textSize="18dp"
+                    android:textColor="@color/white"
+                    android:text="+ Add Location"
+                    android:fontFamily="casual"
+                    android:textStyle="bold"
+                    android:layout_marginRight="25dp"
+                    android:background="@drawable/formbutton"
+                    android:contentDescription="Add travellers"
+                    android:layout_marginBottom="10dp"
+                    android:shadowColor="@color/black"
+                    android:shadowDx="10"
+                    android:shadowDy="10"
+                    android:shadowRadius="5">
+                </Button>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
+                <Button
+                    android:id="@+id/but_submit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="casual"
+                    android:textStyle="bold"
+                    android:textSize="18dp"
+                    android:background="@drawable/formbutton"
+                    android:text="SUBMIT"
+                    android:shadowColor="@color/black"
+                    android:shadowDx="10"
+                    android:shadowDy="10"
+                    android:shadowRadius="5"/>
+            </LinearLayout>
+
+
+
+
+
         </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="@drawable/formfieldbg"
-        android:layout_margin="20dp">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Trip Name : "
-            android:layout_weight="1"
-            android:textSize="24sp"
-            android:fontFamily="sans-serif-smallcaps"
-            android:textColor="@color/white"
-            android:layout_margin="15dp"
-            android:padding="5dp"/>
-        <EditText
-            android:id="@+id/et_tripName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="First Year College Trip"
-            android:layout_weight="1"
-            android:textSize="22dp"
-            android:textColorHint="@color/lightgray"
-            android:textColor="@color/white"
-            android:fontFamily="sans-serif-smallcaps"
-            android:layout_margin="15dp"
-            android:padding="5dp"
-            />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <Button
-            android:id="@+id/but_submit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="SUBMIT"/>
-    </LinearLayout>
-
+    </ScrollView>
 </LinearLayout>
