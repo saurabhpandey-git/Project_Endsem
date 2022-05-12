@@ -37,7 +37,7 @@ public class UserProfileActivity extends AppCompatActivity {
     private TextView nameTextView;
     private TextView ageTextView;
     private FirebaseUser user;
-    private DatabaseReference reference;
+    private DatabaseReference reference, reference2;
     private String userId;
 
     private ImageView userImage;
@@ -103,20 +103,23 @@ public class UserProfileActivity extends AppCompatActivity {
         but_endTrip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DatabaseReference reference1 = null, reference2 = null;
                 reference = FirebaseDatabase.getInstance().getReference().child("Users").child(userID).child("currentTripPlan");
-                reference2 = FirebaseDatabase.getInstance().getReference().child("Users").child(userID).child("history");
+                reference2 = FirebaseDatabase.getInstance().getReference().child("Users").child(userID).child("travelHistory");
                 reference2.push();
 
                 reference.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         System.out.println("======================"+snapshot.getValue());
-                        reference.setValue(snapshot.child("name").getValue());
-                        reference.setValue(snapshot.child("expenseRecords").getValue());
-                        reference.setValue(snapshot.child("route").getValue());
-                        reference.setValue(snapshot.child("cotravellers").getValue());
-                        reference.push();
+                        System.out.println(snapshot.child("name").getValue());
+                        System.out.println(snapshot.child("expenseRecords").getValue());
+
+                        reference2 = reference2.push();
+                        reference2.child("name").setValue(snapshot.child("name").getValue());
+                        reference2.child("expenseRecords").setValue(snapshot.child("expenseRecords").getValue());
+                        reference2.child("route").setValue(snapshot.child("route").getValue());
+                        reference2.child("cotravellers").setValue(snapshot.child("cotravellers").getValue());
+                        reference.removeValue();
                         but_currentTrip.setText("Plan a trip");
                         but_endTrip.setVisibility(View.GONE);
                     }

@@ -35,7 +35,7 @@ public class HistoryActivity extends AppCompatActivity {
         historyListView = findViewById(R.id.historyListView);
         historyName = new ArrayList<>();
         String userID = FirebaseAuth.getInstance().getUid();
-        dbref = FirebaseDatabase.getInstance().getReference().child("User").child("4").child("travelHistory");
+        dbref = FirebaseDatabase.getInstance().getReference().child("Users").child(userID).child("travelHistory");
 
 
         dbref.addValueEventListener(new ValueEventListener() {

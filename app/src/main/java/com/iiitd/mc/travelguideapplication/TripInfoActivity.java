@@ -35,7 +35,7 @@ public class TripInfoActivity extends AppCompatActivity {
         routeListView = findViewById(R.id.routeList);
 
         userID = FirebaseAuth.getInstance().getUid();
-        dbref = FirebaseDatabase.getInstance().getReference().child("User").child("4").child("currentTripPlan");
+        dbref = FirebaseDatabase.getInstance().getReference().child("Users").child(userID).child("currentTripPlan");
 
         cotravellerArrayList = new ArrayList<HashMap<String, String>>();
         ArrayList<String> routeArrayList = new ArrayList<>();
@@ -100,53 +100,5 @@ public class TripInfoActivity extends AppCompatActivity {
 
             }
         });
-
-
-//        database = FirebaseDatabase.getInstance().getReference().child("User").child("4").child("currentTripPlan").child("cotravellers");
-//        ArrayList<ArrayList<String>> cotravellersArrayList = new ArrayList<>();
-//        ArrayList<ArrayList<String>> routeArrayList = new ArrayList<>();
-//
-//        database.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-//
-//                    ArrayList<String> cotraveller = new ArrayList<>();
-//                    cotraveller.add(dataSnapshot.child("name").getValue().toString());
-//                    cotraveller.add(dataSnapshot.child("email").getValue().toString());
-//                    cotravellersArrayList.add(cotraveller);
-//
-//                    ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(TripInfoActivity.this, android.R.layout.simple_list_item_2, cotraveller);
-//                    cotravellerListView.setAdapter(arrayAdapter);
-//                }
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//
-//            }
-//        });
-//
-//        routedb = FirebaseDatabase.getInstance().getReference().child("User").child("4").child("currentTripPlan").child("route");
-//        routedb.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-//
-//                    ArrayList<String> route = new ArrayList<>();
-//                    route.add(dataSnapshot.child("location").getValue().toString());
-//                    route.add(dataSnapshot.child("city").getValue().toString());
-//                    routeArrayList.add(route);
-//
-//                    ArrayAdapter<String> routeAdapter = new ArrayAdapter<String>(TripInfoActivity.this, android.R.layout.simple_list_item_2, route);
-//                    routeListView.setAdapter(routeAdapter);
-//                }
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//
-//            }
-//        });
     }
 }

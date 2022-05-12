@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -29,6 +30,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private EditText editTextName, editTextAge, editTextEmail, editTextPassword;
     private ProgressBar registerProgressBar;
 
+    private TextView tv_accountAlreadyExists;
     private ImageView roveRegisterPageLogo;
 
     @Override
@@ -49,6 +51,9 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         editTextEmail = (EditText) findViewById(R.id.editTextEmail);
         editTextPassword = (EditText) findViewById(R.id.editTextPassword);
 
+        tv_accountAlreadyExists = findViewById(R.id.accountAlreadyExists);
+        tv_accountAlreadyExists.setOnClickListener(this);
+
         registerProgressBar = (ProgressBar) findViewById(R.id.registerProgressBar);
 
     }
@@ -64,6 +69,10 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
             case R.id.signupButton:
                 registerUser();
+                break;
+
+            case R.id.accountAlreadyExists:
+                startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
                 break;
         }
     }
