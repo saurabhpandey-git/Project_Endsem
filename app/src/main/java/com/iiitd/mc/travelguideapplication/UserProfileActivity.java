@@ -68,8 +68,6 @@ public class UserProfileActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 boolean currentTripExists = false;
                 for(DataSnapshot ds:snapshot.getChildren()){
-                    System.out.println("++++++++++++++++++++++data snapshot = "+ds);
-                    System.out.println("++++++++++++++++++++++currnt trip plan = "+ds.getKey().toString());
                     if(ds.getKey().toString().equalsIgnoreCase("currentTripPlan")) {
                         currentTripExists = true;
                     }
@@ -196,7 +194,7 @@ public class UserProfileActivity extends AppCompatActivity {
         historyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(UserProfileActivity.this, TripInfoActivity.class));
+                startActivity(new Intent(UserProfileActivity.this, HistoryActivity.class));
             }
         });
 

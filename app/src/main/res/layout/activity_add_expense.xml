@@ -1,78 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:background="@color/dark">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Expense Details"
+        android:textColor="@color/white"
+        android:fontFamily="cursive"
+        android:textStyle="bold"
+        android:textSize="28dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textAlignment="center"
+        android:padding="5dp"
+        android:background="@drawable/semitransparent"/>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@drawable/formfieldbg"
+        android:layout_margin="20dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/formfieldbg">
 
             <TextView
-                android:layout_width="100dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Purpose: "/>
+                android:text="Purpose: "
+                android:textColor="@color/white"
+                android:fontFamily="monospace"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:layout_weight="2"
+                android:textAlignment="center"
+                android:padding="5dp"/>
 
             <EditText
                 android:id="@+id/expensePurpose"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"/>
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/white"
+                android:layout_height="wrap_content" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/formfieldbg">
 
             <TextView
-                android:layout_width="100dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Amount: "/>
+                android:text="Amount: "
+                android:textColor="@color/white"
+                android:fontFamily="monospace"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:layout_weight="2"
+                android:textAlignment="center"
+                android:padding="5dp"/>
 
             <EditText
                 android:id="@+id/expenseAmount"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"/>
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:layout_weight="1"/>
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/formfieldbg">
 
             <TextView
-                android:layout_width="100dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="comment: "/>
+                android:text="Comment: "
+                android:textColor="@color/white"
+                android:fontFamily="monospace"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:layout_weight="2"
+                android:textAlignment="center"
+                android:padding="5dp"/>
 
             <EditText
                 android:id="@+id/expenseComment"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"/>
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:layout_weight="1"/>
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/formfieldbg">
 
             <TextView
-                android:layout_width="100dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Email ID: "/>
+                android:text="Email ID: "
+                android:textColor="@color/white"
+                android:fontFamily="monospace"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:layout_weight="1.5"
+                android:textAlignment="center"
+                android:padding="5dp"/>
 
             <EditText
                 android:id="@+id/expenseUserEmail"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"/>
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:layout_weight="1"/>
 
         </LinearLayout>
 
@@ -81,7 +150,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Add"/>
+            android:background="@drawable/formbutton"
+            android:textSize="18dp"
+            android:text="Click Here to Add"
+            android:textStyle="bold"
+            android:fontFamily="casual"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:shadowColor="@color/black"
+            android:shadowDx="10"
+            android:shadowDy="10"
+            android:shadowRadius="5"/>
 
     </LinearLayout>
 
