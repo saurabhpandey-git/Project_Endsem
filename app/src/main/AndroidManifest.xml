@@ -16,6 +16,9 @@
         android:theme="@style/Theme.TravelGuideApplication"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".HistoryTripInfoActivity"
+            android:exported="false" />
+        <activity
             android:name=".HistoryActivity"
             android:exported="false" />
         <activity
