@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".LoginActivity"
     android:background="@color/darkest">
 
     <ImageView
@@ -84,6 +84,7 @@
         android:adjustViewBounds="true"
         android:background="@android:color/transparent"
         android:foregroundGravity="center"
+        android:visibility="gone"
         android:maxWidth="50dp"
         android:maxHeight="50dp"
         android:scaleType="fitCenter"
@@ -97,6 +98,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
+        android:visibility="gone"
         android:adjustViewBounds="true"
         android:background="@android:color/transparent"
         android:foregroundGravity="center"
@@ -116,6 +118,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="220dp"
         android:text="Forgot Password?"
+        android:visibility="gone"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
