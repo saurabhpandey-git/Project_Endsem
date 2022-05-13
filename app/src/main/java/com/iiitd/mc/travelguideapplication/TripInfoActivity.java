@@ -56,7 +56,7 @@ public class TripInfoActivity extends AppCompatActivity {
 //    Button but_routeRecommendation;
 //    TextView tv_routeRecommendation;
 
-    FusedLocationProviderClient mFusedLocationClient;
+//    FusedLocationProviderClient mFusedLocationClient;
 
     String userID;
     @Override
@@ -144,166 +144,166 @@ public class TripInfoActivity extends AppCompatActivity {
 
     }
 
-    @SuppressLint("MissingPermission")
-    private void getLastLocation() {
-        // check if permissions are given
-        if (checkPermissions()) {
-
-            // check if location is enabled
-            if (isLocationEnabled()) {
-
-                // getting last
-                // location from
-                // FusedLocationClient
-                // object
-                mFusedLocationClient.getLastLocation().addOnCompleteListener(new OnCompleteListener<Location>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Location> task) {
-                        Location location = task.getResult();
-                        if (location == null) {
-                            requestNewLocationData();
-                        } else {
-                            showLocationAddress(location.getLatitude(), location.getLongitude());
-                        }
-                    }
-                });
-            } else {
-                Toast.makeText(this, "Please turn on" + " your location...", Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-                startActivity(intent);
-            }
-        } else {
-            // if permissions aren't available,
-            // request for permissions
-            requestPermissions();
-        }
-    }
-
-
-
-    @SuppressLint("MissingPermission")
-    private void requestNewLocationData() {
-
-        // Initializing LocationRequest
-        // object with appropriate methods
-        LocationRequest mLocationRequest = new LocationRequest();
-        mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
-        mLocationRequest.setInterval(5);
-        mLocationRequest.setFastestInterval(0);
-        mLocationRequest.setNumUpdates(1);
-
-        // setting LocationRequest
-        // on FusedLocationClient
-        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
-        mFusedLocationClient.requestLocationUpdates(mLocationRequest, mLocationCallback, Looper.myLooper());
-    }
-
-    private LocationCallback mLocationCallback = new LocationCallback() {
-
-        @Override
-        public void onLocationResult(LocationResult locationResult) {
-            Location mLastLocation = locationResult.getLastLocation();
-            showLocationAddress(mLastLocation.getLatitude(), mLastLocation.getLongitude());
-        }
-    };
-
-    // method to check for permissions
-    private boolean checkPermissions() {
-        return ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED &&
-                ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED;
-
-        // If we want background location
-        // on Android 10.0 and higher,
-        // use:
-        // ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_BACKGROUND_LOCATION) == PackageManager.PERMISSION_GRANTED
-    }
-
-    // method to request for permissions
-    private void requestPermissions() {
-        ActivityCompat.requestPermissions(this, new String[]{
-                Manifest.permission.ACCESS_COARSE_LOCATION,
-                Manifest.permission.ACCESS_FINE_LOCATION}, PERMISSION_ID);
-    }
-
-    // method to check
-    // if location is enabled
-    private boolean isLocationEnabled() {
-        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) || locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
-    }
-
-    // If everything is alright then
-    @Override
-    public void
-    onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-
-        if (requestCode == PERMISSION_ID) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                getLastLocation();
-            }
-        }
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        if (checkPermissions()) {
-            getLastLocation();
-        }
-
-    }
-
-    private void showLocationAddress(double latitude, double longitude) {
-        try {
-
-            Geocoder geo = new Geocoder(getApplicationContext(), Locale.getDefault());
-            List<Address> addresses = geo.getFromLocation(latitude, longitude, 1);
-            System.out.println("USER - Lat = "+latitude+" Long = "+longitude);
-
-            dbref = FirebaseDatabase.getInstance().getReference().child("Users").child(userID).child("currentTripPlan").child("route");
-
-            dbref.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    System.out.println("-----------=========="+ snapshot);
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
-
-                }
-            });
-
-
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-    }
-
-    public GeoPoint getLocationFromAddress(String strAddress) {
-
-        Geocoder coder = new Geocoder(this);
-        List<Address> address;
-        GeoPoint p1 = null;
-
-        try {
-            address = coder.getFromLocationName(strAddress, 5);
-            if (address == null) {
-                return null;
-            }
-            Address location = address.get(0);
-            location.getLatitude();
-            location.getLongitude();
-
-            p1 = new GeoPoint((double) (location.getLatitude() * 1E6),
-                    (double) (location.getLongitude() * 1E6));
-
-            return p1;
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
+//    @SuppressLint("MissingPermission")
+//    private void getLastLocation() {
+//        // check if permissions are given
+//        if (checkPermissions()) {
+//
+//            // check if location is enabled
+//            if (isLocationEnabled()) {
+//
+//                // getting last
+//                // location from
+//                // FusedLocationClient
+//                // object
+//                mFusedLocationClient.getLastLocation().addOnCompleteListener(new OnCompleteListener<Location>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<Location> task) {
+//                        Location location = task.getResult();
+//                        if (location == null) {
+//                            requestNewLocationData();
+//                        } else {
+//                            showLocationAddress(location.getLatitude(), location.getLongitude());
+//                        }
+//                    }
+//                });
+//            } else {
+//                Toast.makeText(this, "Please turn on" + " your location...", Toast.LENGTH_LONG).show();
+//                Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+//                startActivity(intent);
+//            }
+//        } else {
+//            // if permissions aren't available,
+//            // request for permissions
+//            requestPermissions();
+//        }
+//    }
+//
+//
+//
+//    @SuppressLint("MissingPermission")
+//    private void requestNewLocationData() {
+//
+//        // Initializing LocationRequest
+//        // object with appropriate methods
+//        LocationRequest mLocationRequest = new LocationRequest();
+//        mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+//        mLocationRequest.setInterval(5);
+//        mLocationRequest.setFastestInterval(0);
+//        mLocationRequest.setNumUpdates(1);
+//
+//        // setting LocationRequest
+//        // on FusedLocationClient
+//        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+//        mFusedLocationClient.requestLocationUpdates(mLocationRequest, mLocationCallback, Looper.myLooper());
+//    }
+//
+//    private LocationCallback mLocationCallback = new LocationCallback() {
+//
+//        @Override
+//        public void onLocationResult(LocationResult locationResult) {
+//            Location mLastLocation = locationResult.getLastLocation();
+//            showLocationAddress(mLastLocation.getLatitude(), mLastLocation.getLongitude());
+//        }
+//    };
+//
+//    // method to check for permissions
+//    private boolean checkPermissions() {
+//        return ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED &&
+//                ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED;
+//
+//        // If we want background location
+//        // on Android 10.0 and higher,
+//        // use:
+//        // ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_BACKGROUND_LOCATION) == PackageManager.PERMISSION_GRANTED
+//    }
+//
+//    // method to request for permissions
+//    private void requestPermissions() {
+//        ActivityCompat.requestPermissions(this, new String[]{
+//                Manifest.permission.ACCESS_COARSE_LOCATION,
+//                Manifest.permission.ACCESS_FINE_LOCATION}, PERMISSION_ID);
+//    }
+//
+//    // method to check
+//    // if location is enabled
+//    private boolean isLocationEnabled() {
+//        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+//        return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) || locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
+//    }
+//
+//    // If everything is alright then
+//    @Override
+//    public void
+//    onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+//        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+//
+//        if (requestCode == PERMISSION_ID) {
+//            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+//                getLastLocation();
+//            }
+//        }
+//    }
+//
+//    @Override
+//    public void onResume() {
+//        super.onResume();
+//        if (checkPermissions()) {
+//            getLastLocation();
+//        }
+//
+//    }
+//
+//    private void showLocationAddress(double latitude, double longitude) {
+//        try {
+//
+//            Geocoder geo = new Geocoder(getApplicationContext(), Locale.getDefault());
+//            List<Address> addresses = geo.getFromLocation(latitude, longitude, 1);
+//            System.out.println("USER - Lat = "+latitude+" Long = "+longitude);
+//
+//            dbref = FirebaseDatabase.getInstance().getReference().child("Users").child(userID).child("currentTripPlan").child("route");
+//
+//            dbref.addValueEventListener(new ValueEventListener() {
+//                @Override
+//                public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                    System.out.println("-----------=========="+ snapshot);
+//                }
+//
+//                @Override
+//                public void onCancelled(@NonNull DatabaseError error) {
+//
+//                }
+//            });
+//
+//
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
+//    }
+//
+//    public GeoPoint getLocationFromAddress(String strAddress) {
+//
+//        Geocoder coder = new Geocoder(this);
+//        List<Address> address;
+//        GeoPoint p1 = null;
+//
+//        try {
+//            address = coder.getFromLocationName(strAddress, 5);
+//            if (address == null) {
+//                return null;
+//            }
+//            Address location = address.get(0);
+//            location.getLatitude();
+//            location.getLongitude();
+//
+//            p1 = new GeoPoint((double) (location.getLatitude() * 1E6),
+//                    (double) (location.getLongitude() * 1E6));
+//
+//            return p1;
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        return null;
+//    }
 
 }
