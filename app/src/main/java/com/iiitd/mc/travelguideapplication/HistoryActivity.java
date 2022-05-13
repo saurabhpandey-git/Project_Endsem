@@ -42,11 +42,14 @@ public class HistoryActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                    historyName.add(dataSnapshot.child("name").getValue().toString());
+                    if(dataSnapshot.child("name").getValue()!=null) {
+                        historyName.add(dataSnapshot.child("name").getValue().toString());
 
 
-                    ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(HistoryActivity.this, android.R.layout.simple_list_item_1, historyName);
-                    historyListView.setAdapter(arrayAdapter);
+                        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(HistoryActivity.this, android.R.layout.simple_list_item_1, historyName);
+                        historyListView.setAdapter(arrayAdapter);
+                    }
+
                 }
             }
             @Override

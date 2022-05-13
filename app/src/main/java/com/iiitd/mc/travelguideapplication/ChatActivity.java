@@ -48,8 +48,12 @@ public class ChatActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
+                chatHistory.clear();
                 for (DataSnapshot ds : snapshot.getChildren()) {
-                    if (ds.child("Sender").getValue().toString().length() != 0) {
+
+                    //if (ds!=null && ds.child("Sender")!=null && ds.child("Sender").getValue().toString().length() != 0) {
+                    System.out.println("====================="+ds.child("Sender").getValue());
+                    if(ds.child("Sender").getValue()!=null ){
                         String a = ds.child("Sender").getValue().toString() + " : " + ds.child("Message").getValue().toString();
                         Toast.makeText(ChatActivity.this, "" + a, Toast.LENGTH_SHORT).show();
                         chatHistory.add(a);
@@ -93,11 +97,12 @@ public class ChatActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 //                Toast.makeText(ChatActivity.this, ""+getIntent().getExtras().get("ChatRoom").toString(), Toast.LENGTH_SHORT).show();
-//              dbase=FirebaseDatabase.getInstance().getReference().child("Users").child(userID).child("chats");
+                dbase=FirebaseDatabase.getInstance().getReference().child("Users").child(userID).child("chats");
                 dbase=dbase.push();
                 String msg = et.getText().toString();
                 chatHistory.add(username + " : " +msg);
-                aAdapter.notifyDataSetChanged();
+                if(aAdapter!=null)
+                    aAdapter.notifyDataSetChanged();
                 dbase.child("Message").setValue(msg);
                 dbase.child("Sender").setValue(username);
 

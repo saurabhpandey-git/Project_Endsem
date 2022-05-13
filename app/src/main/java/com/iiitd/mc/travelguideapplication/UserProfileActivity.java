@@ -83,7 +83,7 @@ public class UserProfileActivity extends AppCompatActivity {
                 else{
                     but_currentTrip.setText("Plan a trip");
                     if(but_endTrip.getVisibility()==View.VISIBLE) {
-                        but_endTrip.setText(View.GONE);
+                        but_endTrip.setVisibility(View.GONE);
                     }
                 }
 
@@ -104,8 +104,8 @@ public class UserProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 reference = FirebaseDatabase.getInstance().getReference().child("Users").child(userID).child("currentTripPlan");
-                reference2 = FirebaseDatabase.getInstance().getReference().child("Users").child(userID).child("travelHistory");
-                reference2.push();
+
+//                reference2.push();
 
                 reference.addValueEventListener(new ValueEventListener() {
                     @Override
@@ -114,6 +114,7 @@ public class UserProfileActivity extends AppCompatActivity {
                         System.out.println(snapshot.child("name").getValue());
                         System.out.println(snapshot.child("expenseRecords").getValue());
 
+                        reference2 = FirebaseDatabase.getInstance().getReference().child("Users").child(userID).child("travelHistory");
                         reference2 = reference2.push();
                         reference2.child("name").setValue(snapshot.child("name").getValue());
                         reference2.child("expenseRecords").setValue(snapshot.child("expenseRecords").getValue());

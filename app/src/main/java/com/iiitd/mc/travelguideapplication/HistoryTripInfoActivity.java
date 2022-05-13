@@ -46,13 +46,13 @@ public class HistoryTripInfoActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     System.out.println("Outer++++++++++++++++++++++++++++++++++++++++++++"+dataSnapshot.getKey().toString());
-                    if (dataSnapshot.child("name").getValue().toString().equalsIgnoreCase(selectedTrip)) {
+                    if (dataSnapshot.child("name").getValue()!=null && dataSnapshot.child("name").getValue().toString().equalsIgnoreCase(selectedTrip)) {
                         myTripName.setText(dataSnapshot.child("name").getValue().toString());
 
                         for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
                             System.out.println("++++++++++++++++++++++++++++++++++++++++++++"+dataSnapshot1.getKey().toString());
 
-                            if (dataSnapshot1.getKey().toString().equalsIgnoreCase("cotravellers")) {
+                            if (dataSnapshot1.getKey()!=null && dataSnapshot1.getKey().toString().equalsIgnoreCase("cotravellers")) {
 //                                System.out.println(dataSnapshot1.child("cotravellers").child("name").getValue().toString());
 //                                System.out.println(dataSnapshot1.child("cotravellers").child("email").getValue().toString());
                                 for (DataSnapshot dataSnapshot2 : dataSnapshot1.getChildren()) {
