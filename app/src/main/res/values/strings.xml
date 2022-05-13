@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">TravelGuideApplication</string>
+    <string name="app_name">ROVE</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="expense_fragment_heading">Expenses</string>
     <string name="title_activity_maps">MapsActivity</string>
+    <string name="title_activity_map">MapActivity</string>
 </resources>

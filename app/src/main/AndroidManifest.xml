@@ -15,15 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TravelGuideApplication"
         android:usesCleartextTraffic="true">
-        <activity
-            android:name=".HistoryTripInfoActivity"
-            android:exported="false" />
-        <activity
-            android:name=".HistoryActivity"
-            android:exported="false" />
-        <activity
-            android:name=".CheckInActivity"
-            android:exported="false" />
+
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 
@@ -37,8 +29,20 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="YOUR_API_KEY" />
+            android:value="AIzaSyCTV59WjFGe-iLOUyonIzJI43KQiu05Jv4" />
 
+        <activity
+            android:name=".NearByPlacesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HistoryTripInfoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HistoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CheckInActivity"
+            android:exported="false" />
         <activity
             android:name=".MapsActivity"
             android:exported="false"
@@ -80,7 +84,6 @@
         <meta-data
             android:name="com.google.android.actions"
             android:resource="@drawable/corner" />
-
     </application>
 
 </manifest>

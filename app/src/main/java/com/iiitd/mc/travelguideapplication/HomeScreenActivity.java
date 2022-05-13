@@ -30,7 +30,7 @@ public class HomeScreenActivity extends AppCompatActivity {
     private ArrayList<Places> listPlaces;
     private ImageButton userLogin;
 
-    private EditText et_search;
+//    private EditText et_search;
     private Button but_search;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +39,7 @@ public class HomeScreenActivity extends AppCompatActivity {
 
         rv = findViewById(R.id.recyclerViewList);
 
-        et_search = findViewById(R.id.et_search);
+//        et_search = findViewById(R.id.et_search);
         but_search = findViewById(R.id.but_search);
 
         but_search.setOnClickListener(new View.OnClickListener() {
@@ -47,7 +47,7 @@ public class HomeScreenActivity extends AppCompatActivity {
             public void onClick(View view) {
 //                Uri uri = Uri.parse(" http://maps.google.com/maps?q=hospital&mrt=yp&sll=lat,lon&output=kml"); // missing 'http://' will cause crashed
 //                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                Intent intent = new Intent(HomeScreenActivity.this, CheckInActivity.class);
+                Intent intent = new Intent(HomeScreenActivity.this, NearByPlacesActivity.class);
 //                intent.setData(uri);
                 startActivity(intent);
             }

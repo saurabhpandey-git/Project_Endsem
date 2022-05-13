@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".HomeScreenActivity"
     android:orientation="vertical"
     android:background="@color/light">
 
@@ -64,29 +64,32 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <EditText
-                android:id="@+id/et_search"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Hospitals/Metro/PoliceStation"
-                android:layout_margin="15dp"
-                android:paddingLeft="15dp"
-                android:inputType="textPersonName"
-                android:minHeight="48dp"
-                android:textSize="20dp"
-                android:layout_weight="1"
-                android:background="@drawable/circle"
-                android:textColor="@color/white"
-                android:textColorHint="@color/lightgray"
-                android:backgroundTint="@color/white" />
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center">
+<!--            <EditText-->
+<!--                android:id="@+id/et_search"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:ems="10"-->
+<!--                android:hint="Hospitals/Metro/PoliceStation"-->
+<!--                android:layout_margin="15dp"-->
+<!--                android:paddingLeft="15dp"-->
+<!--                android:inputType="textPersonName"-->
+<!--                android:minHeight="48dp"-->
+<!--                android:textSize="20dp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:background="@drawable/circle"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textColorHint="@color/lightgray"-->
+<!--                android:backgroundTint="@color/white" />-->
             <Button
                 android:id="@+id/but_search"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_margin="15dp"
-                android:text="Search"
+                android:gravity="center"
+                android:text="Search for you nearby places"
                 android:contentDescription="Login Button"
                 android:paddingRight="15dp" />
         </LinearLayout>

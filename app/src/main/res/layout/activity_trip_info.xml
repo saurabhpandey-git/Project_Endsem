@@ -92,7 +92,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="250dp">
+                    android:layout_height="200dp">
 
                     <ListView
                         android:id="@+id/cotravellerList"
@@ -125,13 +125,55 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="200dp">
+
                     <ListView
                         android:id="@+id/routeList"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                 </LinearLayout>
-
             </LinearLayout>
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="vertical"-->
+<!--                android:layout_margin="10dp"-->
+<!--                android:background="@drawable/formfieldbg">-->
+
+<!--                    <Button-->
+<!--                        android:id="@+id/but_routeRecommendation"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginLeft="40dp"-->
+<!--                        android:layout_marginRight="40dp"-->
+<!--                        android:layout_marginBottom="40dp"-->
+<!--                        android:layout_marginTop="20dp"-->
+<!--                        android:padding="20dp"-->
+<!--                        android:text="Get Route Recommendation"-->
+<!--                        android:background="@drawable/formbutton"-->
+<!--                        android:shadowColor="@color/black"-->
+<!--                        android:textSize="20dp"-->
+<!--                        android:textStyle="bold"-->
+<!--                        android:fontFamily="sans-serif-smallcaps"-->
+<!--                        android:shadowDx="10"-->
+<!--                        android:shadowDy="10"-->
+<!--                        android:shadowRadius="5"/>-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/tv_routeRecommendation"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:visibility="gone"-->
+<!--                        android:text="No route recommendation yet"-->
+<!--                        android:textSize="22dp"-->
+<!--                        android:textStyle="bold"-->
+<!--                        android:layout_margin="10dp"-->
+<!--                        android:textColor="@color/white"-->
+<!--                        android:fontFamily="casual"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:padding="10dp"-->
+<!--                        android:background="@drawable/semitransparent"/>-->
+<!--                </LinearLayout>-->
         </LinearLayout>
 
     </ScrollView>
