@@ -55,7 +55,7 @@ public class ChatActivity extends AppCompatActivity {
                     System.out.println("====================="+ds.child("Sender").getValue());
                     if(ds.child("Sender").getValue()!=null ){
                         String a = ds.child("Sender").getValue().toString() + " : " + ds.child("Message").getValue().toString();
-                        Toast.makeText(ChatActivity.this, "" + a, Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(ChatActivity.this, "" + a, Toast.LENGTH_SHORT).show();
                         chatHistory.add(a);
                         aAdapter = new ArrayAdapter<String>(ChatActivity.this, android.R.layout.simple_list_item_1, chatHistory);
                         lv.setAdapter(aAdapter);
